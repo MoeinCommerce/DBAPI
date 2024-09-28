@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Models
 {
-    public class Barcode
+    public class ProductBarcode
     {
         public int ID { get; set; }
         public Nullable<int> ProductID { get; set; }
