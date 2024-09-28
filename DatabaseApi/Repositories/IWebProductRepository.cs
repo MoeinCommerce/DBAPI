@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IWebProductRepository : IRepository<WebProduct>
+    public interface IWebProductRepository
     {
         void DeleteProductByExcludingList(IEnumerable<int> Ids, int targetWeb);
         void DeleteProductByWooIds(IEnumerable<int> Ids, int targetWeb);

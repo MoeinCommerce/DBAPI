@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IWebCategoryRepository : IRepository<WebCategory>
+    public interface IWebCategoryRepository
     {
     }
 }

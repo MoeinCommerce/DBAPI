@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IProductPriceRepository : IRepository<ProductPrice>
+    public interface IProductPriceRepository
     {
     }
 }

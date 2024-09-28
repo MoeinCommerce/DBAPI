@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IEntityMapRepository : IRepository<EntityMap>
+    public interface IEntityMapRepository
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IOrderRepository : IRepository<OrderHeader>
+    public interface IOrderRepository
     {
     }
 }

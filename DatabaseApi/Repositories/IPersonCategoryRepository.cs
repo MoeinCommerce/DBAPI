@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IPersonCategoryRepository : IRepository<PersonCategory>
+    public interface IPersonCategoryRepository
     {
     }
 }

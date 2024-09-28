@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Repositories
 {
-    public interface IWebEntityRepository : IRepository<WebEntity>
+    public interface IWebEntityRepository
     {
     }
 }
