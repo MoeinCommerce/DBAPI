@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Contexts\Interfaces\IDatabaseContext.cs" />
     <Compile Include="IDbInformation.cs" />
+    <Compile Include="Models\Barcode.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryMap.cs" />
     <Compile Include="Models\CustomerMap.cs" />
