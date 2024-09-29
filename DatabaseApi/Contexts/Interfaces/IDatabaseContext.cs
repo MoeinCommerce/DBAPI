@@ -22,7 +22,9 @@ namespace DatabaseApi.Contexts.Interfaces
         IStorageRepository StorageRepository { get; }
         IWebEntityRepository WebEntityRepository { get; }
         IWebProductRepository WebProductRepository { get; }
+        ICompanyRepository CompanyRepository { get; }
+
         void SaveChanges();
-        Task<int> SaveChangesAsync();
+        IEnumerable<T> ExecuteRawSql<T>(string query);
     }
 }
