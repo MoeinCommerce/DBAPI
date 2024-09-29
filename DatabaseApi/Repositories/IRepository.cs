@@ -10,6 +10,7 @@ namespace DatabaseApi.Repositories
     public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
+        int GetCount();
         T GetById(int id);
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         void Add(T entity);
