@@ -9,6 +9,7 @@ namespace DatabaseApi.Contexts.Interfaces
 {
     public interface IDbContext : IDisposable
     {
+        IProductRepository ProductRepository { get; }
         ICategoryRepository CategoryRepository { get; }
         IEntityMapRepository EntityMapRepository { get; }
         IInventoryRepository InventoryRepository { get; }
