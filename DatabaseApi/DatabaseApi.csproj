@@ -44,6 +44,7 @@
     <Compile Include="Contexts\Interfaces\IDatabaseContext.cs" />
     <Compile Include="IDbInformation.cs" />
     <Compile Include="Models\MyCompany.cs" />
+    <Compile Include="Models\PersonPhoneNumber.cs" />
     <Compile Include="Models\ProductBarcode.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryMap.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductMap.cs" />
     <Compile Include="Models\ProductPrice.cs" />
+    <Compile Include="Models\ProductStock.cs" />
     <Compile Include="Models\Storage.cs" />
     <Compile Include="Models\WebCategory.cs" />
     <Compile Include="Models\WebEntity.cs" />
