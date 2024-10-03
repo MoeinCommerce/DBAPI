@@ -14,6 +14,7 @@ namespace DatabaseApi.Repositories
         void Delete(Product entity);
         IEnumerable<Product> GetAll();
         Product GetById(int id);
+        IEnumerable<Product> GetProductsByIds(IEnumerable<int> productIds);
         void SetInitialStock(int productId, int wareHouseId, float stock);
         void Update(Product entity);
         IEnumerable<ProductBarcode> GetProductBarcodes(int productId);
