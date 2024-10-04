@@ -11,7 +11,7 @@ namespace DatabaseApi.Repositories
     {
         void Add(Product entity, List<ProductBarcode> productBarcodes = null);
         void AddRange(IEnumerable<Product> entities);
-        void Delete(Product entity);
+        void Delete(int productId);
         IEnumerable<Product> GetAll();
         Product GetById(int id);
         void SetInitialStock(int productId, int wareHouseId, float stock);
