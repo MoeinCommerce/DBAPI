@@ -14,14 +14,20 @@ namespace DatabaseApi.Repositories
         void AddRange(IEnumerable<Person> persons);
         void AddPersonPhoneNumber(int personId, List<PersonPhoneNumber> phoneNumbers);
         IEnumerable<Person> GetAll();
-        IEnumerable<Person> GetWhere(Expression<Func<Person, bool>> predicate);
         Person GetPerson(int personId);
         IEnumerable<PersonPhoneNumber> GetPersonPhoneNumbers(int personId);
         IEnumerable<Person> GetPersonsByGroup(int groupId);
         void Update(Person person);
         void BulkUpdate(List<Person> persons);
-        void Delete(int personId, bool forceDelete = false);
-        void DeletePersonsByGroup(int groupId, bool forceDelete = false);
-        void DeleteAll(bool forceDelete = false);
+        void Delete(int personId);
+        void DeleteCasecade(int personId);
+        IEnumerable<Person> Search(string text);
+        IEnumerable<Person> SearchByName(string text);
+        IEnumerable<Person> SearchByCode(string text);
+        IEnumerable<Person> SearchByLastName(string text);
+        IEnumerable<Person> SearchByCompanyName(string text);
+        IEnumerable<Person> SearchByPhoneNumber(string text);
+        IEnumerable<Person> SearchByAddress(string text);
+
     }
 }
