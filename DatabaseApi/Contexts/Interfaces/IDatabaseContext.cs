@@ -23,6 +23,7 @@ namespace DatabaseApi.Contexts.Interfaces
         IWebEntityRepository WebEntityRepository { get; }
         IWebProductRepository WebProductRepository { get; }
         ICompanyRepository CompanyRepository { get; }
+        ITableManager TableManager { get; }
 
         void SaveChanges();
         IEnumerable<T> ExecuteRawSql<T>(string query);

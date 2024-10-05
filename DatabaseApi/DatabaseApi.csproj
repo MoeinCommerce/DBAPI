@@ -80,6 +80,7 @@
     <Compile Include="Repositories\IProductRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\IStorageRepository.cs" />
+    <Compile Include="Repositories\ITableManager.cs" />
     <Compile Include="Repositories\IWebCategoryRepository.cs" />
     <Compile Include="Repositories\IWebEntityRepository.cs" />
     <Compile Include="Repositories\IWebProductRepository.cs" />
