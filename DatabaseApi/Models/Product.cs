@@ -22,7 +22,6 @@ namespace DatabaseApi.Models
         public Nullable<int> Shortcut { get; set; }             // Shortcut key or reference
         public Nullable<int> GroupID { get; set; }              // Group ID
         public string ImagePath { get; set; }                   // Path to product image
-        public Nullable<float> TotalQuantity { get; set; }      // Total quantity in stock
         public Nullable<bool> IsSelectable { get; set; }        // Indicates if product is selectable for sale
         public string ExternalCode1 { get; set; }               // External code 1
         public string ExternalCode2 { get; set; }               // External code 2
@@ -34,7 +33,7 @@ namespace DatabaseApi.Models
         public Nullable<byte> UnitType { get; set; }            // Type of unit
         public string AdditionalInfo { get; set; }              // Additional information
         public Nullable<short> IconIndex { get; set; }          // Icon index
-        public Nullable<float> Stock { get; set; }              // Stock quantity
+        public Nullable<int> Stock { get; set; }              // Stock quantity
         public string Barcode { get; set; }                     // Product barcode
         public Nullable<int> MenuOrder { get; set; }            // Menu display order
         public Nullable<bool> HasWeight { get; set; }           // Indicates if the product has weight
@@ -42,6 +41,7 @@ namespace DatabaseApi.Models
         public Nullable<float> Density { get; set; }            // Product density
         public Nullable<decimal> Cost { get; set; }             // Cost price
         public Nullable<decimal> SalePrice { get; set; }        // Sale price
+        public Nullable<decimal> FinalPrice { get; set; }
         public Nullable<decimal> IncrementPercentage { get; set; } // Price increase percentage
         public Nullable<decimal> IncrementAmount { get; set; }  // Price increment amount
         public Nullable<int> PriceCalculationMethod { get; set; } // Method of price calculation
