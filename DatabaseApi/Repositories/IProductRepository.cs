@@ -9,7 +9,7 @@ namespace DatabaseApi.Repositories
 {
     public interface IProductRepository
     {
-        void Add(Product entity, List<ProductBarcode> productBarcodes = null);
+        int Add(Product entity, List<ProductBarcode> productBarcodes = null);
         void AddRange(IEnumerable<Product> entities);
         void Delete(int productId);
         IEnumerable<Product> GetAll();
