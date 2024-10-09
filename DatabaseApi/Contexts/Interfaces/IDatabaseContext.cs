@@ -28,5 +28,6 @@ namespace DatabaseApi.Contexts.Interfaces
         void SaveChanges();
         IEnumerable<T> SqlQuery<T>(string query);
         void ExecuteRawSql(string query, params object[] args);
+        List<string> GetCompanies();
     }
 }
