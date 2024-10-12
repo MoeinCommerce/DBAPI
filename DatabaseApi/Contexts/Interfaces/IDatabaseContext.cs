@@ -26,6 +26,8 @@ namespace DatabaseApi.Contexts.Interfaces
         ITableManager TableManager { get; }
 
         void SaveChanges();
-        IEnumerable<T> ExecuteRawSql<T>(string query);
+        IEnumerable<T> SqlQuery<T>(string query);
+        void ExecuteRawSql(string query, params object[] args);
+        List<string> GetCompanies();
     }
 }
