@@ -13,8 +13,8 @@ namespace DatabaseApi.Repositories
         int GetCompaniesCount();
         List<string> GetCompaniesName();
         int GetFiscalYearCount(string companyName);
-        List<MyCompany> GetFiscalYears(string companyName);
-        MyCompany GetLastFiscalYear(string companyName);
+        Dictionary<string, MyCompany> GetFiscalYears(string companyName);
+        Dictionary<string, MyCompany> GetLastFiscalYear(string companyName);
         List<string> GetMoeinDbNames();
     }
 }
