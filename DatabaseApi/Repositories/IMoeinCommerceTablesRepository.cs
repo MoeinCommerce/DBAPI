@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DatabaseApi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,10 @@ namespace DatabaseApi.Repositories
         void CreateProductMapTable();
         void CreateInvoiceMapTable();
         void CreateWebProductTable();
+        List<ProductMap> GetProductMapUpdateRequired(int targetWeb);
+        List<CategoryMap> GetCategoryMapUpdateRequired(int targetWeb);
+        List<InvoiceMap> GetInvoiceMapUpdateRequired(int targetWeb);
+        List<CustomerMap> GetCustomerMapUpdateRequired(int targetWeb);
+        List<PaymentMethodMap> GetPaymentMethodMapUpdateRequired(int targetWeb);
     }
 }
