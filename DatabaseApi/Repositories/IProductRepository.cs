@@ -1,4 +1,5 @@
 ﻿using DatabaseApi.Models;
+using DatabaseApi.Models.McModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,6 @@ namespace DatabaseApi.Repositories
         IEnumerable<ProductBarcode> GetProductBarcodes(int productId);
         int GetProductStock(int productId, int warehouseId = 0);
         List<ProductStock> GetAllProductStock(int warehouseId = 0);
+        List<McProduct> GetMcProducts();
     }
 }

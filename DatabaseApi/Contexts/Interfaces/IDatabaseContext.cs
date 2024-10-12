@@ -24,6 +24,7 @@ namespace DatabaseApi.Contexts.Interfaces
         IWebProductRepository WebProductRepository { get; }
         ICompanyRepository CompanyRepository { get; }
         ITableManager TableManager { get; }
+        IMoeinCommerceTablesRepository MoeinCommerceTablesRepository { get; }
 
         void SaveChanges();
         IEnumerable<T> SqlQuery<T>(string query);

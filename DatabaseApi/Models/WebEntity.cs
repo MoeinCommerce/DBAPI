@@ -8,8 +8,8 @@ namespace DatabaseApi.Models
 {
     public class WebEntity
     {
-        public int woo_id { get; set; }
-        public string woo_name { get; set; }
+        public int web_id { get; set; }
+        public string web_name { get; set; }
         public int target_web { get; set; }
     }
 }
