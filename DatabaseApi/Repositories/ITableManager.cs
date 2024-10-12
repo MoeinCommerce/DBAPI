@@ -10,5 +10,6 @@ namespace DatabaseApi.Repositories
     {
         void CreateTable(string name, List<string> columnInfo);
         void DeleteTable(string name);
+        void CreateTrigger(string triggerName, string triggerSql);
     }
 }
