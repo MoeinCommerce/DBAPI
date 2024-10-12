@@ -22,5 +22,6 @@ namespace DatabaseApi.Repositories
         List<InvoiceMap> GetInvoiceMapUpdateRequired(int targetWeb);
         List<CustomerMap> GetCustomerMapUpdateRequired(int targetWeb);
         List<PaymentMethodMap> GetPaymentMethodMapUpdateRequired(int targetWeb);
+        void InstallTriggers();
     }
 }
