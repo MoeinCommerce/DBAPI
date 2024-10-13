@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Models
 {
-    public partial class InvoiceItem
+    public partial class InvoiceProductItem
     {
         public int ProductID { get; set; }                      
         public Nullable<float> Quantity { get; set; }           
