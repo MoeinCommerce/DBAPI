@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Contexts\Interfaces\IDatabaseContext.cs" />
     <Compile Include="IDbInformation.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\McModels\McProduct.cs" />
     <Compile Include="Models\MyCompany.cs" />
     <Compile Include="Models\PersonPhoneNumber.cs" />
@@ -52,10 +53,8 @@
     <Compile Include="Models\CustomerMap.cs" />
     <Compile Include="Models\EntityMap.cs" />
     <Compile Include="Models\Inventory.cs" />
-    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceItem.cs" />
     <Compile Include="Models\InvoiceMap.cs" />
-    <Compile Include="Models\OrderDetail.cs" />
-    <Compile Include="Models\OrderHeader.cs" />
     <Compile Include="Models\PaymentMethodMap.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonCategory.cs" />
