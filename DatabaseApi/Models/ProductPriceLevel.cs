@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Models
 {
-    public partial class PriceLevel
+    public partial class ProductPriceLevel
     {
         public int ID { get; set; }            // Price level ID
         public string Description { get; set; } // Price level description or caption

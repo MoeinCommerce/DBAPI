@@ -59,7 +59,7 @@
     <Compile Include="Models\PaymentMethodMap.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonCategory.cs" />
-    <Compile Include="Models\PriceLevel.cs" />
+    <Compile Include="Models\ProductPriceLevel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductMap.cs" />
     <Compile Include="Models\ProductPrice.cs" />
