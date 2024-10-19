@@ -1,9 +1,6 @@
 ﻿using DatabaseApi.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DatabaseApi.Contexts.Interfaces
 {
@@ -22,12 +19,12 @@ namespace DatabaseApi.Contexts.Interfaces
         IStorageRepository StorageRepository { get; }
         IWebEntityRepository WebEntityRepository { get; }
         IWebProductRepository WebProductRepository { get; }
-        ICompanyRepository CompanyRepository { get; }
         ITableManager TableManager { get; }
         IMoeinCommerceTablesRepository MoeinCommerceTablesRepository { get; }
 
         void SaveChanges();
         IEnumerable<T> SqlQuery<T>(string query);
         void ExecuteRawSql(string query, params object[] args);
+        void SwitchDatabase(string databaseName);
     }
 }

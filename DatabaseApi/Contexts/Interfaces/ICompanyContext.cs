@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseApi.Repositories
+namespace DatabaseApi.Contexts.Interfaces
 {
-    public interface ICompanyRepository
+    public interface ICompanyContext
     {
         Dictionary<string, MyCompany> GetAllCompaniesInfo();
         int GetCompaniesCount();
