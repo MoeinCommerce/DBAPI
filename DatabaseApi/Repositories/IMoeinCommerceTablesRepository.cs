@@ -32,6 +32,11 @@ namespace DatabaseApi.Repositories
         bool InsertCustomerMap(IEntityMap entityMap);
         bool InsertInvoiceMap(IEntityMap entityMap);
         bool InsertPaymentMethodMap(IEntityMap entityMap);
+        bool DeleteProductMap(IEntityMap entityMap);
+        bool DeleteCategoryMap(IEntityMap entityMap);
+        bool DeleteCustomerMap(IEntityMap entityMap);
+        bool DeleteInvoiceMap(IEntityMap entityMap);
+        bool DeletePaymentMethodMap(IEntityMap entityMap);
         void InstallTriggers();
     }
 }
