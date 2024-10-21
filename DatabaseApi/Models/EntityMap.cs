@@ -9,7 +9,7 @@ namespace DatabaseApi.Models
     public class EntityMap
     {
         public int id { get; set; }
-        public int wcid { get; set; }
+        public int web_id { get; set; }
         public int target_web { get; set; }
         public DateTime last_update { get; set; }
         public bool update_required { get; set; }
