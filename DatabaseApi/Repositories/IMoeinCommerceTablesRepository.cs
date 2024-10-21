@@ -22,7 +22,11 @@ namespace DatabaseApi.Repositories
         List<InvoiceMap> GetInvoiceMapUpdateRequired(int targetWeb);
         List<CustomerMap> GetCustomerMapUpdateRequired(int targetWeb);
         List<PaymentMethodMap> GetPaymentMethodMapUpdateRequired(int targetWeb);
-        bool UpdateProductMap(int moeinId, int webId, int targetWeb, ProductMap productMap);
+        bool UpdateProductMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
+        bool UpdateCategoryMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
+        bool UpdateCustomerMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
+        bool UpdateInvoiceMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
+        bool UpdatePaymentMethodMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
         void InstallTriggers();
     }
 }
