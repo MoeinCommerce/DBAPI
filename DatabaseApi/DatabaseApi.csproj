@@ -53,7 +53,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CategoryMap.cs" />
     <Compile Include="Models\CustomerMap.cs" />
-    <Compile Include="Models\EntityMap.cs" />
+    <Compile Include="Models\IEntityMap.cs" />
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InvoiceProductItem.cs" />
     <Compile Include="Models\InvoiceMap.cs" />
