@@ -27,6 +27,11 @@ namespace DatabaseApi.Repositories
         bool UpdateCustomerMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
         bool UpdateInvoiceMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
         bool UpdatePaymentMethodMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
+        bool InsertProductMap(IEntityMap entityMap);
+        bool InsertCategoryMap(IEntityMap entityMap);
+        bool InsertCustomerMap(IEntityMap entityMap);
+        bool InsertInvoiceMap(IEntityMap entityMap);
+        bool InsertPaymentMethodMap(IEntityMap entityMap);
         void InstallTriggers();
     }
 }
