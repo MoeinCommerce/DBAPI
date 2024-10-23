@@ -1,6 +1,7 @@
 ﻿using DatabaseApi.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DatabaseApi.Contexts.Interfaces
 {
@@ -25,6 +26,7 @@ namespace DatabaseApi.Contexts.Interfaces
         void SaveChanges();
         IEnumerable<T> SqlQuery<T>(string query);
         void ExecuteRawSql(string query, params object[] args);
+        Task ExecuteRawSqlAsync(string query, params object[] args);
         void SwitchDatabase(string databaseName);
     }
 }
