@@ -17,6 +17,7 @@ namespace DatabaseApi.Repositories
         void Update(T entity);
         void Delete(T entity);
         void SaveChanges();
+        T Normalize(T entity);
         bool Validate(T entity);
     }
 }
