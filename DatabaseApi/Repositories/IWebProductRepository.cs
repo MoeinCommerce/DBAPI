@@ -13,7 +13,8 @@ namespace DatabaseApi.Repositories
         void DeleteProductByWooIds(IEnumerable<int> Ids, int targetWeb);
         void CreateProducts(IEnumerable<WebProduct> productsToBeCreated, int targetWeb);
         void UpdateProducts(IEnumerable<WebProduct> webProducts, int targetWeb);
-        List<WebProduct> PaginatedSearchWebProducts(string searchInput, int pageNumber, int pageSize);
-        int GetTotalItemsCount(string searchInput);
+        List<WebProduct> PaginatedSearchWebProducts(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        List<WebProduct> PaginatedSearchWebProductsFilteredByIds(string searchInput, int pageNumber, int pageSize, int targetWeb, List<int> filteredIds);
+        int GetTotalItemsCount(string searchInput, int targetWeb);
     }
 }

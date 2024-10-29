@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Models.McModels
 {
-    public class McProduct
+    public class McProduct : McEntity
     {
-        public int id { get; set; }
-        public int? web_id { get; set; }
-        public string name { get; set; }
-        public string web_name { get; set; }
-        public int? target_web { get; set; }
     }
 }

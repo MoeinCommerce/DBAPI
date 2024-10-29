@@ -46,6 +46,8 @@
     <Compile Include="IDbInformation.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\InvoiceServiceItem.cs" />
+    <Compile Include="Models\McModels\McCategory.cs" />
+    <Compile Include="Models\McModels\McEntity.cs" />
     <Compile Include="Models\McModels\McProduct.cs" />
     <Compile Include="Models\MyCompany.cs" />
     <Compile Include="Models\PersonPhoneNumber.cs" />

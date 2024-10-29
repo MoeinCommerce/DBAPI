@@ -23,6 +23,7 @@ namespace DatabaseApi.Repositories
         List<ProductStock> GetAllProductStock(int warehouseId = 0);
         List<McProduct> GetMcProducts();
         List<McProduct> PaginatedSearchMcProducts(string searchInput, int pageNumber, int pageSize);
+        List<McProduct> PaginatedSearchMcProductsFilteredByIds(string searchInput, int pageNumber, int pageSize, List<int> filteredIds);
         int GetTotalItemsCount(string searchInput);
     }
 }

@@ -17,11 +17,11 @@ namespace DatabaseApi.Repositories
         void CreateProductMapTable();
         void CreateInvoiceMapTable();
         void CreateWebProductTable();
-        List<ProductMap> GetProductMapUpdateRequired(int targetWeb);
-        List<CategoryMap> GetCategoryMapUpdateRequired(int targetWeb);
-        List<InvoiceMap> GetInvoiceMapUpdateRequired(int targetWeb);
-        List<CustomerMap> GetCustomerMapUpdateRequired(int targetWeb);
-        List<PaymentMethodMap> GetPaymentMethodMapUpdateRequired(int targetWeb);
+        List<ProductMap> GetProductMapFilterByUpdateRequired(int targetWeb, bool isRequiredUpdate);
+        List<CategoryMap> GetCategoryMapFilterByUpdateRequired(int targetWeb, bool isRequiredUpdate);
+        List<InvoiceMap> GetInvoiceMapFilterByUpdateRequired(int targetWeb, bool isRequiredUpdate);
+        List<CustomerMap> GetCustomerMapFilterByUpdateRequired(int targetWeb, bool isRequiredUpdate);
+        List<PaymentMethodMap> GetPaymentMethodMapFilterByUpdateRequired(int targetWeb, bool isRequiredUpdate);
         bool UpdateProductMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
         bool UpdateCategoryMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
         bool UpdateCustomerMap(int moeinId, int webId, int targetWeb, IEntityMap entityMap);
