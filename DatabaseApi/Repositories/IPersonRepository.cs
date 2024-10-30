@@ -12,10 +12,10 @@ namespace DatabaseApi.Repositories
     {
         void Add(Person person);
         void AddRange(IEnumerable<Person> persons);
-        void AddPersonPhoneNumber(int personId, List<PersonPhoneNumber> phoneNumbers);
+        //void AddPersonPhoneNumber(int personId, List<PersonPhoneNumber> phoneNumbers);
         IEnumerable<Person> GetAll();
         Person GetPerson(int personId);
-        IEnumerable<PersonPhoneNumber> GetPersonPhoneNumbers(int personId);
+        //IEnumerable<PersonPhoneNumber> GetPersonPhoneNumbers(int personId);
         IEnumerable<Person> GetPersonsByGroup(int groupId);
         void Update(Person person);
         void BulkUpdate(List<Person> persons);

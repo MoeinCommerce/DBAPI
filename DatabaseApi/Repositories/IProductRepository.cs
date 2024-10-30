@@ -10,7 +10,7 @@ namespace DatabaseApi.Repositories
 {
     public interface IProductRepository
     {
-        int Add(Product entity, List<ProductBarcode> productBarcodes = null);
+        //int Add(Product entity, List<ProductBarcode> productBarcodes = null);
         void AddRange(IEnumerable<Product> entities);
         void Delete(int productId);
         IEnumerable<Product> GetAll();
@@ -18,9 +18,9 @@ namespace DatabaseApi.Repositories
         IEnumerable<Product> GetProductsByIds(IEnumerable<int> productIds);
         void SetInitialStock(int productId, int wareHouseId, float stock);
         void Update(Product entity);
-        IEnumerable<ProductBarcode> GetProductBarcodes(int productId);
+        //IEnumerable<ProductBarcode> GetProductBarcodes(int productId);
         int GetProductStock(int productId, int warehouseId = 0);
-        List<ProductStock> GetAllProductStock(int warehouseId = 0);
+        //List<ProductStock> GetAllProductStock(int warehouseId = 0);
         List<McProduct> GetMcProducts();
         List<McProduct> PaginatedSearchMcProducts(string searchInput, int pageNumber, int pageSize);
         List<McProduct> PaginatedSearchMcProductsFilteredByIds(string searchInput, int pageNumber, int pageSize, List<int> filteredIds);
