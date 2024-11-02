@@ -46,6 +46,7 @@
     <Compile Include="IDbInformation.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceItem.cs" />
     <Compile Include="Models\MappableModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Person.cs" />
