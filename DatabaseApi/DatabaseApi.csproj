@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Contexts\Interfaces\ICompanyContext.cs" />
     <Compile Include="Contexts\Interfaces\IDatabaseContext.cs" />
+    <Compile Include="Exceptions\DoesNotExistError.cs" />
+    <Compile Include="Exceptions\ExceptionModel.cs" />
+    <Compile Include="Exceptions\ValidationError.cs" />
     <Compile Include="IDbInformation.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Invoice.cs" />
@@ -52,23 +55,8 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ICategoryRepository.cs" />
-    <Compile Include="Repositories\IEntityMapRepository.cs" />
-    <Compile Include="Repositories\IInventoryRepository.cs" />
-    <Compile Include="Repositories\IInvoiceRepository.cs" />
-    <Compile Include="Repositories\IMoeinCommerceTablesRepository.cs" />
-    <Compile Include="Repositories\IPersonCategoryRepository.cs" />
     <Compile Include="Repositories\IPersonRepository.cs" />
-    <Compile Include="Repositories\IPriceLevelRepository.cs" />
-    <Compile Include="Repositories\IProductPriceRepository.cs" />
-    <Compile Include="Repositories\IProductRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
-    <Compile Include="Repositories\IStorageRepository.cs" />
-    <Compile Include="Repositories\ITableManager.cs" />
-    <Compile Include="Repositories\IWebCategoryRepository.cs" />
-    <Compile Include="Repositories\IWebEntityRepository.cs" />
-    <Compile Include="Repositories\IWebProductRepository.cs" />
-    <Compile Include="Repositories\IOrderRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
