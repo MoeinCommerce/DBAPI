@@ -9,14 +9,11 @@ namespace DatabaseApi.Repositories
 {
     public interface IInvoiceRepository
     {
-        void Add(Invoice invoice, List<InvoiceProductItem> invoiceProductItems);
-        void Add(Invoice invoice, List<InvoiceServiceItem> invoiceServiceItems);
-        void AddRange(Tuple<Invoice, List<InvoiceProductItem>> invoices);
-        void AddRange(Tuple<Invoice, List<InvoiceServiceItem>> invoices);
-        void ChangeInvoiceOwnership(Invoice invoice, Person person);
-        void Delete(Invoice invoice);
-        void Update(Invoice invoice);
-        void AddInvoiceProductItems(List<InvoiceProductItem> invoiceProductItems);
-        void AddInvoiceServiceItems(List<InvoiceServiceItem> invoiceServiceItems);
+        bool InsertPreInvoice(Invoice invoice, IEnumerable<InvoiceItem> invoiceItems);
+        bool InsertSellInvoice(Invoice invoice, IEnumerable<InvoiceItem> invoiceItems);
+        bool InvoiceExists(int webId);
+        bool DeleteCaseCadeInvoice(int moeinInvoiceId);
+        IEnumerable<Invoice> GetMCInvoices();
+        IEnumerable<InvoiceItem> GetInvoiceDetails(int invoiceId);
     }
 }
