@@ -9,6 +9,7 @@ namespace DatabaseApi.Models
     public class InvoiceItem
     {
         public int InvoiceId { get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public decimal Quantity { get; set; }
         public decimal DiscountPercentage { get; set; }
