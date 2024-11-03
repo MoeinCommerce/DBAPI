@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Models
 {
-    public partial class Category
+    public class Category  : MappableModel
     {
-        public int ID { get; set; }
-        public Nullable<int> ParentID { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> BarcodeLength { get; set; }
+        public string Description { get; set; }
+        public int? ParentId { get; set; }
     }
 }
