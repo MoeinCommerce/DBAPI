@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DatabaseApi.Models;
 
 namespace DatabaseApi
 {
@@ -29,13 +30,15 @@ namespace DatabaseApi
         /// Gets the version of the dll file.
         /// </summary>
         string Version { get; }
+        
+        /// <summary>
+        /// Gets the icon path of the dll.
+        /// </summary>
+        string IconPath { get; }
 
         /// <summary>
-        /// Gets a dictionary of configuration settings for the dll.
+        /// Gets the configurations of the dll. configurations are used to initialize database connection.
         /// </summary>
-        /// <remarks>
-        /// The dictionary keys represent configuration setting names, and the values represent the corresponding settings.
-        /// </remarks>
-        Dictionary<string, string> Configurations { get; }
+        List<DbConfig> Configurations { get; }
     }
 }

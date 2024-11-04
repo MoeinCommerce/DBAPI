@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using DatabaseApi.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using DatabaseApi.Exceptions;
+using DatabaseApi.Models;
 
-namespace DatabaseApi.Repositories
+namespace DatabaseApi.Contexts.Interfaces
 {
-    public interface IRepository
+    public interface IDbContext : IDisposable
     {
         #region Product
         
@@ -18,7 +20,7 @@ namespace DatabaseApi.Repositories
         /// <returns>
         /// A map representing the connection between the product and its web representation.
         /// </returns>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the product is invalid.
         /// - Set the Field property to the name of the invalid property.
         /// - Set the Content property to a message explaining the validation issue.
@@ -34,7 +36,7 @@ namespace DatabaseApi.Repositories
         /// <returns>
         /// The newly created product in the product table.
         /// </returns>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the product is invalid.
         /// </exception>
         Product CreateProduct(Product product);
@@ -48,7 +50,7 @@ namespace DatabaseApi.Repositories
         /// <returns>
         /// The updated product object.
         /// </returns>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the product update is invalid.
         /// </exception>
         Product UpdateProduct(Product product);
@@ -59,7 +61,7 @@ namespace DatabaseApi.Repositories
         /// <param name="product">
         /// The product whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
         /// </param>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the product is invalid.
         /// </exception>
         void DeleteProductMap(Product product);
@@ -70,7 +72,7 @@ namespace DatabaseApi.Repositories
         /// <param name="productId">
         /// The ID of the product to be deleted.
         /// </param>
-        /// <exception cref="DoesNotExistError">
+        /// <exception cref="DoesNotExistException">
         /// Thrown if the product does not exist.
         /// </exception>
         void DeleteProductMapById(int productId);
@@ -82,33 +84,57 @@ namespace DatabaseApi.Repositories
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering products.
         /// </param>
+        /// <param name="priceLevel">
+        /// The price level to filter price of products.
+        /// if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
         /// <returns>
         /// A list of products mapped to the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetProducts(int targetWeb);
+        IEnumerable<Product> GetProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
-        /// Retrieves all products mapped to other products on a specified web platform.
-        /// This mapping shows product-to-product associations on the target website.
+        ///     Retrieves all products mapped to other products on a specified web platform.
+        ///     This mapping shows product-to-product associations on the target website.
         /// </summary>
         /// <param name="targetWeb">
-        /// The ID of the target web platform for filtering product-to-product mappings.
+        ///     The ID of the target web platform for filtering product-to-product mappings.
+        /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
         /// </param>
         /// <returns>
-        /// A list of products mapped to other products on the specified web platform.
+        ///     A list of products mapped to other products on the specified web platform.
         /// </returns> 
-        IEnumerable<Product> GetMappedProducts(int targetWeb);
+        IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
-        /// Retrieves all products on a specified web platform that are not mapped to other products.
+        ///     Retrieves all products on a specified web platform that are not mapped to other products.
         /// </summary>
         /// <param name="targetWeb">
-        /// The ID of the target web platform to filter unmapped products.
+        ///     The ID of the target web platform to filter unmapped products.
+        /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
         /// </param>
         /// <returns>
-        /// A list of products that are not mapped to other products on the specified web platform.
+        ///     A list of products that are not mapped to other products on the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetUnMappedProducts(int targetWeb);
+        IEnumerable<Product> GetUnMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
@@ -126,10 +152,18 @@ namespace DatabaseApi.Repositories
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering products.
         /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
         /// <returns>
         /// A paginated list of products to the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Product> GetProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products mapped to other products on a specified web platform, using a search term.
@@ -147,10 +181,18 @@ namespace DatabaseApi.Repositories
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering product-to-product mappings.
         /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
         /// <returns>
         /// A paginated list of products mapped to other products on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Product> GetMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products that are not mapped to other products on a specified web platform, using a search term.
@@ -168,10 +210,18 @@ namespace DatabaseApi.Repositories
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering unmapped products.
         /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
         /// <returns>
         /// A paginated list of products not mapped to other products on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetUnMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Product> GetUnMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves all products that require updates on a specified website.
@@ -179,10 +229,18 @@ namespace DatabaseApi.Repositories
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering products needing updates.
         /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
         /// <returns>
         /// A list of products that need to be updated on the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetProductsNeedToUpdate(int targetWeb);
+        IEnumerable<Product> GetProductsNeedToUpdate(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
         
         #endregion
 
@@ -198,7 +256,7 @@ namespace DatabaseApi.Repositories
         /// <returns>
         /// A map representing the connection between the category and its web representation.
         /// </returns>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the category is invalid.
         /// - Set the Field property to the name of the invalid property.
         /// - Set the Content property to a message explaining the validation issue.
@@ -214,7 +272,7 @@ namespace DatabaseApi.Repositories
         /// <returns>
         /// The newly created category in the category table.
         /// </returns>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the category is invalid.
         /// </exception>
         Category CreateCategory(Category category);
@@ -225,7 +283,7 @@ namespace DatabaseApi.Repositories
         /// <param name="category">
         /// The category whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
         /// </param>
-        /// <exception cref="ValidationError">
+        /// <exception cref="InvalidFieldException">
         /// Thrown if the category is invalid.
         /// </exception>
         void DeleteCategoryMap(Category category);
@@ -236,7 +294,7 @@ namespace DatabaseApi.Repositories
         /// <param name="categoryId">
         /// The ID of the category to be deleted.
         /// </param>
-        /// <exception cref="DoesNotExistError">
+        /// <exception cref="DoesNotExistException">
         /// Thrown if the categoryId does not exist.
         /// </exception>
         void DeleteCategoryMapById(int categoryId);
@@ -351,12 +409,80 @@ namespace DatabaseApi.Repositories
         IEnumerable<Product> GetCategoriesNeedToUpdate(int targetWeb);
         
         #endregion
+        
+        #region PriceLevel
+        
+        /// <summary>
+        /// Gets all price levels from the database.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<PriceLevel> GetPriceLevels();
+        
+        #endregion
+        
+        #region Warehouse
+        
+        /// <summary>
+        /// Gets all warehouses from the database.
+        /// </summary>
+        /// <returns></returns>
+        IEnumerable<Warehouse> GetWarehouses();
+        
+        #endregion
 
-        #region Tables
+        #region Other Methods
 
-        void CreateTable(string name, List<string> columnInfo);
-        void DeleteTable(string name);
-        void CreateTrigger(string triggerName, string triggerSql);
+        /// <summary>
+        /// Saves all changes made in the context to the database.
+        /// </summary>
+        void SaveChanges();
+
+        /// <summary>
+        /// Executes a raw SQL query and returns the results as a collection of specified type <typeparamref name="T"/>.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of the objects to be returned.
+        /// </typeparam>
+        /// <param name="query">
+        /// The SQL query to execute.
+        /// </param>
+        /// <returns>
+        /// An <see cref="IEnumerable{T}"/> of objects returned by the query.
+        /// </returns>
+        IEnumerable<T> SqlQuery<T>(string query);
+
+        /// <summary>
+        /// Executes a raw SQL command against the database.
+        /// </summary>
+        /// <param name="query">
+        /// The raw SQL command to execute.
+        /// </param>
+        /// <param name="args">
+        /// The parameters to include in the SQL command, if any.
+        /// </param>
+        void ExecuteRawSql(string query, params object[] args);
+
+        /// <summary>
+        /// Asynchronously executes a raw SQL command against the database.
+        /// </summary>
+        /// <param name="query">
+        /// The raw SQL command to execute.
+        /// </param>
+        /// <param name="args">
+        /// The parameters to include in the SQL command, if any.
+        /// </param>
+        /// <returns>
+        /// A task that represents the asynchronous execution of the SQL command.
+        /// </returns>
+        Task ExecuteRawSqlAsync(string query, params object[] args);
+
+        /// <summary>
+        /// Switches the active database to the specified database name.
+        /// </summary>
+        /// <param name="databaseName">
+        /// The name of the database to switch to.
+        /// </param>
+        void SwitchDatabase(string databaseName);
 
         #endregion
     }

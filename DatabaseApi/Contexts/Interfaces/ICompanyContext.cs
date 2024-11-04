@@ -42,18 +42,6 @@ namespace DatabaseApi.Contexts.Interfaces
         int GetFiscalYearCount(string companyName);
 
         /// <summary>
-        /// Retrieves all fiscal years and associated data for a specified company.
-        /// </summary>
-        /// <param name="companyName">
-        /// The name of the company for which to retrieve fiscal year data.
-        /// </param>
-        /// <returns>
-        /// A dictionary where each key is the fiscal year and the value is the <see cref="Company"/>
-        /// object containing data for that fiscal year.
-        /// </returns>
-        Dictionary<string, Company> GetFiscalYears(string companyName);
-
-        /// <summary>
         /// Retrieves the most recent fiscal year and its data for a specified company.
         /// </summary>
         /// <param name="companyName">

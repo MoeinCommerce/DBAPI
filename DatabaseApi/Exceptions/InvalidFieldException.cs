@@ -1,10 +1,8 @@
-using System;
-
 namespace DatabaseApi.Exceptions
 {
-    public class ValidationError : ExceptionModel
+    public class InvalidFieldException : ExceptionModel
     {
-        public ValidationError(string field, string content)
+        public InvalidFieldException(string field, string content)
         {
             Content = content;
             Field = field;
