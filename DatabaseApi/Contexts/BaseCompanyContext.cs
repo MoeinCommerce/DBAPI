@@ -6,7 +6,7 @@ using DatabaseApi.Models;
 
 namespace DatabaseApi.Contexts
 {
-    public abstract class BaseCompanyContext : ICompanyContext
+    public abstract class BaseCompanyContext
     {
         protected BaseCompanyContext(Dictionary<string, string> configs)
         {
