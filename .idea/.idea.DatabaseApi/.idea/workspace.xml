@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca88df16-7f15-44fa-8c7d-1eec43cacac6" name="Changes" comment="Create BaseDatabaseContext abstract class for implementing IDbContext interface">
-      <change afterPath="$PROJECT_DIR$/DatabaseApi/Exceptions/DoesNotExistException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatabaseApi/Models/DbConfig.cs" afterDir="false" />
+    <list default="true" id="ca88df16-7f15-44fa-8c7d-1eec43cacac6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DatabaseApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DatabaseApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/ICompanyContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/ICompanyContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/DatabaseApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/DatabaseApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/Exceptions/DoesNotExistError.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/Exceptions/ValidationError.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Exceptions/InvalidFieldException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/IDbInformation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/IDbInformation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/IDbContext.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +21,12 @@
     &quot;assignee&quot;: &quot;Erfan4708&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Erfan4708/DatabaseApi.git&quot;,
-    &quot;accountId&quot;: &quot;7fc2cb03-a61c-488a-bae6-d8cfa7df5389&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/MoeinCommerce/DBAPI.git",
+    "accountId": "7fc2cb03-a61c-488a-bae6-d8cfa7df5389"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Contexts/Interfaces/ICompanyContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -47,19 +39,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;updated__interfaces&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +65,7 @@
       <workItem from="1730272057050" duration="1030000" />
       <workItem from="1730273118544" duration="2035000" />
       <workItem from="1730535224842" duration="1132000" />
-      <workItem from="1730699689903" duration="4766000" />
+      <workItem from="1730699689903" duration="7950000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="Add isRequiredUpdate entry into methods that work with EntityMap tables">
       <option name="closed" value="true" />
@@ -124,7 +116,21 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۰۷" />
       <updated>1730704397126</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎−۰۰۰۰۸" summary="Create a DbConfig class to store the configuration created in relation to the database">
+      <option name="closed" value="true" />
+      <created>1730704499966</created>
+      <option name="number" value="LOCAL‎−۰۰۰۰۸" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۰۸" />
+      <updated>1730704499966</updated>
+    </task>
+    <task id="LOCAL‎−۰۰۰۰۹" summary="Implement methods for managing products, categories, price levels, and warehouses&#10;&#10;- Implemented methods for managing products: CreateProductMap, CreateProduct, UpdateProduct, DeleteProductMap, DeleteProductMapById, GetProducts, GetMappedProducts, GetUnMappedProducts, GetProductsBySearch, GetMappedProductsBySearch, GetUnMappedProductsBySearch, GetProductsNeedToUpdate.&#10;- Implemented methods for managing categories: CreateCategoryMap, CreateCategory, DeleteCategoryMap, DeleteCategoryMapById, GetAllCategories, GetMappedCategories, GetUnMappedCategories, GetCategoriesBySearch, GetMappedCategoriesBySearch, GetUnMappedCategoriesBySearch, GetCategoriesNeedToUpdate.&#10;- Implemented methods for managing price levels: GetPriceLevels.&#10;- Implemented methods for managing warehouses: GetWarehouses.&#10;- Implemented general methods: SaveChanges, SqlQuery, ExecuteRawSql, ExecuteRawSqlAsync, SwitchDatabase, Dispose.">
+      <option name="closed" value="true" />
+      <created>1730704583879</created>
+      <option name="number" value="LOCAL‎−۰۰۰۰۹" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۰۹" />
+      <updated>1730704583879</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +158,9 @@
     <MESSAGE value="Remove extra classes from project" />
     <MESSAGE value="Create BaseCompanyContext abstract class for implementing ICompanyContext interface" />
     <MESSAGE value="Create BaseDatabaseContext abstract class for implementing IDbContext interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create BaseDatabaseContext abstract class for implementing IDbContext interface" />
+    <MESSAGE value="Create a DbConfig class to store the configuration created in relation to the database" />
+    <MESSAGE value="Implement methods for managing products, categories, price levels, and warehouses&#10;&#10;- Implemented methods for managing products: CreateProductMap, CreateProduct, UpdateProduct, DeleteProductMap, DeleteProductMapById, GetProducts, GetMappedProducts, GetUnMappedProducts, GetProductsBySearch, GetMappedProductsBySearch, GetUnMappedProductsBySearch, GetProductsNeedToUpdate.&#10;- Implemented methods for managing categories: CreateCategoryMap, CreateCategory, DeleteCategoryMap, DeleteCategoryMapById, GetAllCategories, GetMappedCategories, GetUnMappedCategories, GetCategoriesBySearch, GetMappedCategoriesBySearch, GetUnMappedCategoriesBySearch, GetCategoriesNeedToUpdate.&#10;- Implemented methods for managing price levels: GetPriceLevels.&#10;- Implemented methods for managing warehouses: GetWarehouses.&#10;- Implemented general methods: SaveChanges, SqlQuery, ExecuteRawSql, ExecuteRawSqlAsync, SwitchDatabase, Dispose." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement methods for managing products, categories, price levels, and warehouses&#10;&#10;- Implemented methods for managing products: CreateProductMap, CreateProduct, UpdateProduct, DeleteProductMap, DeleteProductMapById, GetProducts, GetMappedProducts, GetUnMappedProducts, GetProductsBySearch, GetMappedProductsBySearch, GetUnMappedProductsBySearch, GetProductsNeedToUpdate.&#10;- Implemented methods for managing categories: CreateCategoryMap, CreateCategory, DeleteCategoryMap, DeleteCategoryMapById, GetAllCategories, GetMappedCategories, GetUnMappedCategories, GetCategoriesBySearch, GetMappedCategoriesBySearch, GetUnMappedCategoriesBySearch, GetCategoriesNeedToUpdate.&#10;- Implemented methods for managing price levels: GetPriceLevels.&#10;- Implemented methods for managing warehouses: GetWarehouses.&#10;- Implemented general methods: SaveChanges, SqlQuery, ExecuteRawSql, ExecuteRawSqlAsync, SwitchDatabase, Dispose." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
