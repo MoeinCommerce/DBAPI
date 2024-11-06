@@ -241,6 +241,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of products that need to be updated on the specified web platform.
         /// </returns>
         IEnumerable<Product> GetProductsNeedToUpdate(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+
+        IEnumerable<int> GetProductWebIds(int targetWeb, IEnumerable<int> ids = null);
         
         #endregion
 
