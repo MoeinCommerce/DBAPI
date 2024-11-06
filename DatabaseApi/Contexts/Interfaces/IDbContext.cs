@@ -442,6 +442,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </param>
         void SwitchDatabase(string databaseName);
 
+        IEnumerable<TModel> ExecuteRawSqlTemporary<TModel>(string query);
+
         #endregion
     }
 }
