@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ca88df16-7f15-44fa-8c7d-1eec43cacac6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DatabaseApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DatabaseApi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseApi/Contexts/BaseDatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Contexts/BaseDatabaseContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/IDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/IDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseApi/Models/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Models/Category.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,14 +24,23 @@
     &quot;assignee&quot;: &quot;Erfan4708&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/MoeinCommerce/DBAPI.git",
-    "accountId": "7fc2cb03-a61c-488a-bae6-d8cfa7df5389"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MoeinCommerce/DBAPI.git&quot;,
+    &quot;accountId&quot;: &quot;7fc2cb03-a61c-488a-bae6-d8cfa7df5389&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Contexts/Interfaces/ICompanyContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/DoesNotExistError.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/DoesNotExistError.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/ExceptionModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DatabaseApi/Exceptions/ExceptionModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/ExceptionModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/ExceptionModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/ExceptionModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Exceptions/ValidationError.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DatabaseApi/IDbInformation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/MOEIN/source/repos/DatabaseApi/DatabaseApi/Models/McModels/McCategory.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -39,19 +51,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,6 +78,7 @@
       <workItem from="1730273118544" duration="2035000" />
       <workItem from="1730535224842" duration="1132000" />
       <workItem from="1730699689903" duration="7950000" />
+      <workItem from="1730865339331" duration="7585000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="Add isRequiredUpdate entry into methods that work with EntityMap tables">
       <option name="closed" value="true" />
@@ -130,7 +143,14 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۰۹" />
       <updated>1730704583879</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎−۰۰۰۱۰" summary="Create workspace.xml file">
+      <option name="closed" value="true" />
+      <created>1730865539901</created>
+      <option name="number" value="LOCAL‎−۰۰۰۱۰" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۱۰" />
+      <updated>1730865539901</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +180,8 @@
     <MESSAGE value="Create BaseDatabaseContext abstract class for implementing IDbContext interface" />
     <MESSAGE value="Create a DbConfig class to store the configuration created in relation to the database" />
     <MESSAGE value="Implement methods for managing products, categories, price levels, and warehouses&#10;&#10;- Implemented methods for managing products: CreateProductMap, CreateProduct, UpdateProduct, DeleteProductMap, DeleteProductMapById, GetProducts, GetMappedProducts, GetUnMappedProducts, GetProductsBySearch, GetMappedProductsBySearch, GetUnMappedProductsBySearch, GetProductsNeedToUpdate.&#10;- Implemented methods for managing categories: CreateCategoryMap, CreateCategory, DeleteCategoryMap, DeleteCategoryMapById, GetAllCategories, GetMappedCategories, GetUnMappedCategories, GetCategoriesBySearch, GetMappedCategoriesBySearch, GetUnMappedCategoriesBySearch, GetCategoriesNeedToUpdate.&#10;- Implemented methods for managing price levels: GetPriceLevels.&#10;- Implemented methods for managing warehouses: GetWarehouses.&#10;- Implemented general methods: SaveChanges, SqlQuery, ExecuteRawSql, ExecuteRawSqlAsync, SwitchDatabase, Dispose." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement methods for managing products, categories, price levels, and warehouses&#10;&#10;- Implemented methods for managing products: CreateProductMap, CreateProduct, UpdateProduct, DeleteProductMap, DeleteProductMapById, GetProducts, GetMappedProducts, GetUnMappedProducts, GetProductsBySearch, GetMappedProductsBySearch, GetUnMappedProductsBySearch, GetProductsNeedToUpdate.&#10;- Implemented methods for managing categories: CreateCategoryMap, CreateCategory, DeleteCategoryMap, DeleteCategoryMapById, GetAllCategories, GetMappedCategories, GetUnMappedCategories, GetCategoriesBySearch, GetMappedCategoriesBySearch, GetUnMappedCategoriesBySearch, GetCategoriesNeedToUpdate.&#10;- Implemented methods for managing price levels: GetPriceLevels.&#10;- Implemented methods for managing warehouses: GetWarehouses.&#10;- Implemented general methods: SaveChanges, SqlQuery, ExecuteRawSql, ExecuteRawSqlAsync, SwitchDatabase, Dispose." />
+    <MESSAGE value="Create workspace.xml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create workspace.xml file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

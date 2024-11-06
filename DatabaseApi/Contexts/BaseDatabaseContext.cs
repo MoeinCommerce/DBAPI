@@ -28,7 +28,10 @@ namespace DatabaseApi.Contexts
         {
             throw new System.NotImplementedException();
         }
-
+        public Product UpdateProductMap(int id, int webId, int targetWeb, Product product)
+        {
+            throw new System.NotImplementedException();
+        }
         public Product CreateProduct(Product product)
         {
             throw new System.NotImplementedException();
@@ -50,6 +53,16 @@ namespace DatabaseApi.Contexts
         }
 
         public IEnumerable<Product> GetProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Product GetProductById(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetProductsByIds(IEnumerable<int> ids)
         {
             throw new System.NotImplementedException();
         }
@@ -143,6 +156,11 @@ namespace DatabaseApi.Contexts
             throw new System.NotImplementedException();
         }
 
+        public IEnumerable<Category> GetCategoriesByWebId(int webId, int targetWeb)
+        {
+            throw new System.NotImplementedException();
+        }
+
         #endregion
 
         #region PriceLevel
@@ -169,27 +187,26 @@ namespace DatabaseApi.Contexts
         {
             throw new System.NotImplementedException();
         }
-
-        public IEnumerable<T> SqlQuery<T>(string query)
+        public IEnumerable<T> SqlQuery<T>(string query, params object[] args)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
-
         public void ExecuteRawSql(string query, params object[] args)
         {
             throw new System.NotImplementedException();
         }
-
         public Task ExecuteRawSqlAsync(string query, params object[] args)
         {
             throw new System.NotImplementedException();
         }
-
         public void SwitchDatabase(string databaseName)
         {
             throw new System.NotImplementedException();
         }
-
+        public void InstallPrerequisites()
+        {
+            throw new System.NotImplementedException();
+        }
         public void Dispose()
         {
             throw new System.NotImplementedException();

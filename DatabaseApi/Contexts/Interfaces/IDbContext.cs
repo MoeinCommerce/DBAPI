@@ -28,6 +28,16 @@ namespace DatabaseApi.Contexts.Interfaces
         Product CreateProductMap(Product product);
 
         /// <summary>
+        /// Update product map by id, webId and targetWeb.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="webId"></param>
+        /// <param name="targetWeb"></param>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        Product UpdateProductMap(int id, int webId, int targetWeb, Product product);
+
+        /// <summary>
         /// Creates a new product in the product table and generates a mapping to its web representation.
         /// </summary>
         /// <param name="product">
@@ -96,6 +106,20 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of products mapped to the specified web platform.
         /// </returns>
         IEnumerable<Product> GetProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        
+        /// <summary>
+        /// Retrieve product by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Product GetProductById(int id);
+        
+        /// <summary>
+        /// Retrieve products filtered by list of ids.
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        IEnumerable<Product> GetProductsByIds(IEnumerable<int> ids);
 
         /// <summary>
         ///     Retrieves all products mapped to other products on a specified web platform.
@@ -407,6 +431,14 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of categories that need to be updated on the specified web platform.
         /// </returns>
         IEnumerable<Product> GetCategoriesNeedToUpdate(int targetWeb);
+
+        /// <summary>
+        /// Retrieve categories filtered by webId
+        /// </summary>
+        /// <param name="webId"></param>
+        /// <param name="targetWeb"></param>
+        /// <returns></returns>
+        IEnumerable<Category> GetCategoriesByWebId(int webId, int targetWeb);
         
         #endregion
         
@@ -449,7 +481,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// An <see cref="IEnumerable{T}"/> of objects returned by the query.
         /// </returns>
-        IEnumerable<T> SqlQuery<T>(string query);
+        IEnumerable<T> SqlQuery<T>(string query, params object[] args);
 
         /// <summary>
         /// Executes a raw SQL command against the database.
@@ -483,6 +515,11 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The name of the database to switch to.
         /// </param>
         void SwitchDatabase(string databaseName);
+
+        /// <summary>
+        /// Install prerequisites for the database.
+        /// </summary>
+        void InstallPrerequisites();
 
         #endregion
     }
