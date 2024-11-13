@@ -94,51 +94,6 @@ namespace DatabaseApi.Contexts.Interfaces
         IEnumerable<Product> GetProductsByIds(IEnumerable<int> ids);
 
         /// <summary>
-        ///     Retrieves all products mapped to other products on a specified web platform.
-        ///     This mapping shows product-to-product associations on the target website.
-        /// </summary>
-        /// <param name="searchTerm">
-        ///    The search term for filtering product-to-product mappings.
-        /// </param>
-        /// <param name="targetWeb">
-        ///     The ID of the target web platform for filtering product-to-product mappings.
-        /// </param>
-        /// <param name="priceLevel">
-        ///     The price level to filter price of products.
-        ///     if price level is null, default price is returned.
-        /// </param>
-        /// <param name="warehouse">
-        ///     The warehouse to filter stock quantity of products.
-        ///     if warehouse is null, sum of quantities are returned.
-        /// </param>
-        /// <returns>
-        ///     A list of products mapped to other products on the specified web platform.
-        /// </returns> 
-        IEnumerable<Product> GetMappedProductsBySearch(string searchTerm, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
-
-        /// <summary>
-        ///     Retrieves all products on a specified web platform that are not mapped to other products.
-        /// </summary>
-        /// <param name="searchTerm">
-        ///    The search term for filtering unmapped products.
-        /// </param>
-        /// <param name="targetWeb">
-        ///     The ID of the target web platform to filter unmapped products.
-        /// </param>
-        /// <param name="priceLevel">
-        ///     The price level to filter price of products.
-        ///     if price level is null, default price is returned.
-        /// </param>
-        /// <param name="warehouse">
-        ///     The warehouse to filter stock quantity of products.
-        ///     if warehouse is null, sum of quantities are returned.
-        /// </param>
-        /// <returns>
-        ///     A list of products that are not mapped to other products on the specified web platform.
-        /// </returns>
-        IEnumerable<Product> GetUnMappedProductsBySearch(string searchTerm, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
-
-        /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
         /// </summary>
         /// <param name="searchInput">
