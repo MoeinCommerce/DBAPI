@@ -49,20 +49,6 @@ namespace DatabaseApi.Contexts.Interfaces
         Product CreateProduct(Product product);
 
         /// <summary>
-        /// Updates an existing product in the product table.
-        /// </summary>
-        /// <param name="product">
-        /// The product object with updated details.
-        /// </param>
-        /// <returns>
-        /// The updated product object.
-        /// </returns>
-        /// <exception cref="InvalidFieldException">
-        /// Thrown if the product update is invalid.
-        /// </exception>
-        Product UpdateProduct(Product product);
-
-        /// <summary>
         /// Deletes a mapping that links a product to its web representation.
         /// </summary>
         /// <param name="product">
