@@ -17,15 +17,12 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="product">
         /// The product to be mapped, including the ID, WebId, and TargetWeb values.
         /// </param>
-        /// <returns>
-        /// A map representing the connection between the product and its web representation.
-        /// </returns>
         /// <exception cref="InvalidFieldException">
         /// Thrown if the product is invalid.
         /// - Set the Field property to the name of the invalid property.
         /// - Set the Content property to a message explaining the validation issue.
         /// </exception>
-        Product CreateProductMap(Product product);
+        void CreateProductMap(Product product);
 
         /// <summary>
         /// Update product map by id, webId and targetWeb.
@@ -254,15 +251,12 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="category">
         /// The category to be mapped, including the ID, WebId, and TargetWeb values.
         /// </param>
-        /// <returns>
-        /// A map representing the connection between the category and its web representation.
-        /// </returns>
         /// <exception cref="InvalidFieldException">
         /// Thrown if the category is invalid.
         /// - Set the Field property to the name of the invalid property.
         /// - Set the Content property to a message explaining the validation issue.
         /// </exception>
-        Product CreateCategoryMap(Category category);
+        void CreateCategoryMap(Category category);
 
         /// <summary>
         /// Creates a new category in the category table and generates a mapping to its web representation.
@@ -322,7 +316,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A list of categories mapped to other categories on the specified web platform.
         /// </returns> 
-        IEnumerable<Product> GetMappedCategories(int targetWeb);
+        IEnumerable<Category> GetMappedCategories(int targetWeb);
 
         /// <summary>
         /// Retrieves all categories on a specified web platform that are not mapped to other categories.
@@ -333,7 +327,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A list of categories that are not mapped to other categories on the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetUnMappedCategories(int targetWeb);
+        IEnumerable<Category> GetUnMappedCategories(int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered categories to a specified web platform, using a search term.
@@ -354,7 +348,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of categories to the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Category> GetCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered categories mapped to other categories on a specified web platform, using a search term.
@@ -375,7 +369,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of categories mapped to other categories on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Category> GetMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered categories that are not mapped to other categories on a specified web platform, using a search term.
@@ -396,7 +390,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of categories not mapped to other categories on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
 
         /// <summary>
         /// Retrieves all categories that require updates on a specified website.
@@ -407,7 +401,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A list of categories that need to be updated on the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetCategoriesNeedToUpdate(int targetWeb);
+        IEnumerable<Category> GetCategoriesNeedToUpdate(int targetWeb);
 
         /// <summary>
         /// Retrieve categories filtered by webId
