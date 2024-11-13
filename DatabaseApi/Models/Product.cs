@@ -12,8 +12,8 @@ namespace DatabaseApi.Models
         public string Unit { get; set; }   
         public string Description { get; set; }
         public decimal? BuyPrice { get; set; }
+        public decimal RegularPrice { get; set; }
         public decimal SellPrice { get; set; }
-        public int? DiscountPercentage { get; set; }
         public int WarehouseId { get; set; }
         public int StockQuantity { get; set; }
         public int? CategoryId { get; set; }
