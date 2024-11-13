@@ -80,6 +80,44 @@ namespace DatabaseApi.Contexts.Interfaces
         IEnumerable<Product> GetProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
         
         /// <summary>
+        /// Retrieves paginated and filtered products mapped to other products on a specified web platform
+        /// </summary>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering product-to-product mappings.
+        /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
+        /// <returns>
+        /// A paginated list of products mapped to other products on the specified web platform that match the search term.
+        /// </returns>
+        IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+
+        /// <summary>
+        /// Retrieves paginated and filtered products that are not mapped to other products on a specified web platform.
+        /// </summary>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering unmapped products.
+        /// </param>
+        /// <param name="priceLevel">
+        ///     The price level to filter price of products.
+        ///     if price level is null, default price is returned.
+        /// </param>
+        /// <param name="warehouse">
+        ///     The warehouse to filter stock quantity of products.
+        ///     if warehouse is null, sum of quantities are returned.
+        /// </param>
+        /// <returns>
+        /// A paginated list of products not mapped to other products on the specified web platform that match the search term.
+        /// </returns>
+        IEnumerable<Product> GetUnMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        
+        /// <summary>
         /// Retrieve product by id.
         /// </summary>
         /// <param name="id"></param>
