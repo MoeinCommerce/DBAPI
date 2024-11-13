@@ -97,6 +97,9 @@ namespace DatabaseApi.Contexts.Interfaces
         ///     Retrieves all products mapped to other products on a specified web platform.
         ///     This mapping shows product-to-product associations on the target website.
         /// </summary>
+        /// <param name="searchTerm">
+        ///    The search term for filtering product-to-product mappings.
+        /// </param>
         /// <param name="targetWeb">
         ///     The ID of the target web platform for filtering product-to-product mappings.
         /// </param>
@@ -111,11 +114,14 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         ///     A list of products mapped to other products on the specified web platform.
         /// </returns> 
-        IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        IEnumerable<Product> GetMappedProductsBySearch(string searchTerm, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
         ///     Retrieves all products on a specified web platform that are not mapped to other products.
         /// </summary>
+        /// <param name="searchTerm">
+        ///    The search term for filtering unmapped products.
+        /// </param>
         /// <param name="targetWeb">
         ///     The ID of the target web platform to filter unmapped products.
         /// </param>
@@ -130,7 +136,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         ///     A list of products that are not mapped to other products on the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetUnMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        IEnumerable<Product> GetUnMappedProductsBySearch(string searchTerm, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
