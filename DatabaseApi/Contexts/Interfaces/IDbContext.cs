@@ -61,17 +61,6 @@ namespace DatabaseApi.Contexts.Interfaces
         /// Thrown if the product is invalid.
         /// </exception>
         void DeleteProductMap(Product product);
-        
-        /// <summary>
-        /// Deletes a mapping that links a product to its web representation by productId.
-        /// </summary>
-        /// <param name="productId">
-        /// The ID of the product to be deleted.
-        /// </param>
-        /// <exception cref="DoesNotExistException">
-        /// Thrown if the product does not exist.
-        /// </exception>
-        void DeleteProductMapById(int productId);
 
         /// <summary>
         /// Retrieves all products mapped to a specified web platform.
