@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using DatabaseApi.Exceptions;
@@ -74,7 +75,7 @@ namespace DatabaseApi.Contexts.Interfaces
         ///     if warehouse is null, sum of quantities are returned.
         /// </param>
         /// <returns>
-        /// A paginated list of products mapped to other products on the specified web platform that match the search term.
+        /// A list of products that are mapped to other products on the specified web platform.
         /// </returns>
         IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
         
@@ -113,6 +114,18 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A paginated list of products to the specified web platform that match the search term.
         /// </returns>
         IEnumerable<Product> GetProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        
+        /// <summary>
+        /// Retrieves the number of products that match a search term on a specified web platform.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering products.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering products.
+        /// </param>
+        /// <returns></returns>
+        int GetTotalProductsCount(string searchInput, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered products mapped to other products on a specified web platform, using a search term.
@@ -142,6 +155,18 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A paginated list of products mapped to other products on the specified web platform that match the search term.
         /// </returns>
         IEnumerable<Product> GetMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        
+        /// <summary>
+        /// Retrieves the number of products mapped to other products on a specified web platform that match a search term.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering product-to-product mappings.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering product-to-product mappings.
+        /// </param>
+        /// <returns></returns>
+        int GetTotalMappedProductsCount(string searchInput, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered products that are not mapped to other products on a specified web platform, using a search term.
@@ -171,6 +196,15 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A paginated list of products not mapped to other products on the specified web platform that match the search term.
         /// </returns>
         IEnumerable<Product> GetUnMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        
+        /// <summary>
+        /// retrieves the number of products that are not mapped to other products on a specified web platform that match a search term.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering unmapped products.
+        /// </param>
+        /// <returns></returns>
+        int GetTotalUnMappedProductsCount(string searchInput);
 
         /// <summary>
         /// Retrieves all products that require updates on a specified website.
@@ -307,14 +341,11 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of categories not mapped to other categories on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize);
 
         /// <summary>
         /// Retrieves all categories that require updates on a specified website.
         /// </summary>
-        /// <param name="targetWeb">
-        /// The ID of the target web platform for filtering categories needing updates.
-        /// </param>
         /// <returns>
         /// A list of categories that need to be updated on the specified web platform.
         /// </returns>
