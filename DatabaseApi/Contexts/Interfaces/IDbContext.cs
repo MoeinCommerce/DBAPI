@@ -250,6 +250,15 @@ namespace DatabaseApi.Contexts.Interfaces
         /// - Set the Content property to a message explaining the validation issue.
         /// </exception>
         void CreateCategoryMap(Category category);
+        
+        /// <summary>
+        /// Create category map by id, webId and targetWeb.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="webId"></param>
+        /// <param name="targetWeb"></param>
+        /// <param name="category"></param>
+        void UpdateCategoryMap(int id, int webId, int targetWeb, Category category);
 
         /// <summary>
         /// Creates a new category in the category table and generates a mapping to its web representation.
