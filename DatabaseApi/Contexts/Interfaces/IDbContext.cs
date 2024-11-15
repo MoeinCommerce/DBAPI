@@ -84,7 +84,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
-        IEnumerable<Product> GetProductsByIds(IEnumerable<int> ids);
+        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<int> ids, PriceLevel priceLevel,Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
@@ -350,11 +350,18 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of categories that need to be updated on the specified web platform.
         /// </returns>
         IEnumerable<Category> GetCategoriesNeedToUpdate(int targetWeb);
-        
+
+        /// <summary>
+        /// Retrieve categories filtered by list of ids.
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        IEnumerable<Category> GetCategoriesByIds(int targetWeb, IEnumerable<int> ids);
+
         #endregion
-        
+
         #region PriceLevel
-        
+
         /// <summary>
         /// Gets all price levels from the database.
         /// </summary>
