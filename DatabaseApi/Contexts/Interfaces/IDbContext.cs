@@ -78,6 +78,14 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of products that are mapped to other products on the specified web platform.
         /// </returns>
         IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+
+        /// <summary>
+        /// Retrieves products that are not mapped to other products.
+        /// </summary>
+        /// <returns>
+        /// A list of products that are not mapped to other products.
+        /// </returns>
+        IEnumerable<Product> GetUnMappedProducts();
         
         /// <summary>
         /// Retrieve products filtered by list of ids.
@@ -279,6 +287,14 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of categories mapped to other categories on the specified web platform.
         /// </returns> 
         IEnumerable<Category> GetMappedCategories(int targetWeb);
+        
+        /// <summary>
+        /// Retrieve categories that are not mapped to other categories.
+        /// </summary>
+        /// <returns>
+        /// A list of categories that are not mapped to other categories.
+        /// </returns>
+        IEnumerable<Category> GetUnMappedCategories();
 
         /// <summary>
         /// Retrieves paginated and filtered categories to a specified web platform, using a search term.
@@ -357,6 +373,18 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="ids"></param>
         /// <returns></returns>
         IEnumerable<Category> GetCategoriesByIds(int targetWeb, IEnumerable<int> ids);
+        
+        /// <summary>
+        /// Retrieves all categories from the database. filtered by  web id.
+        /// </summary>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering categories.
+        /// </param>
+        /// <param name="webId">
+        /// The web id to filter categories.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, int webId);
 
         #endregion
 
