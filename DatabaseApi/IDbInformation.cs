@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using DatabaseApi.Models;
 
 namespace DatabaseApi
@@ -39,6 +40,6 @@ namespace DatabaseApi
         /// <summary>
         /// Gets the configurations of the dll. configurations are used to initialize database connection.
         /// </summary>
-        List<DbConfig> Configurations { get; }
+        ObservableCollection<DbConfig> Configurations { get; }
     }
 }

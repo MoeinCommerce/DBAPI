@@ -55,7 +55,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="product">
         /// The product whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
         /// </param>
-        /// <exception cref="InvalidFieldException">
+        /// <exception cref="DoesNotExistException">
         /// Thrown if the product is invalid.
         /// </exception>
         void DeleteProductMap(Product product);
