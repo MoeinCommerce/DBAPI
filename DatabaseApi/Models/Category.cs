@@ -11,6 +11,7 @@ namespace DatabaseApi.Models
     {
         public string Description { get; set; }
         public int? ParentId { get; set; }
+        public int? ParentWebId { get; set; }
         public ObservableCollection<Category> SubCategories { get; set; }
     }
 }
