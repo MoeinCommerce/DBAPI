@@ -238,6 +238,15 @@ namespace DatabaseApi.Contexts.Interfaces
         #region Category
         
         /// <summary>
+        /// Retrieves category by id.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the category to retrieve.
+        /// </param>
+        /// <returns></returns>
+        Category GetCategoryById(int id);
+        
+        /// <summary>
         /// Creates a mapping between a category and a corresponding web representation.
         /// This mapping links the category to its representation on a specific website.
         /// </summary>
