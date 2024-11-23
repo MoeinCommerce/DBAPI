@@ -425,7 +425,6 @@ namespace DatabaseApi.Contexts.Interfaces
         IEnumerable<Warehouse> GetWarehouses();
         
         #endregion
-
         
         #region Customers
         
