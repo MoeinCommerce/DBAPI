@@ -605,14 +605,6 @@ namespace DatabaseApi.Contexts.Interfaces
         
         #region Other Methods
 
-        /// <summary>
-        /// Switches the active database to the specified database name.
-        /// </summary>
-        /// <param name="databaseName">
-        /// The name of the database to switch to.
-        /// </param>
-        void SwitchDatabase(string databaseName);
-
         IEnumerable<TModel> ExecuteRawSqlTemporary<TModel>(string query);
 
         #endregion
