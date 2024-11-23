@@ -443,7 +443,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// Returns a paginated list of customers that match the search term.
         /// </returns>
-        IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize);
+        IEnumerable<Customer> GetCustomersBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize);
         
         
         /// <summary>
@@ -489,7 +489,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// Returns a paginated list of invoices that match the search term, start date and end date.
         /// </returns>
-        IEnumerable<Invoice> GetInvoicesBySearch(string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
+        IEnumerable<Invoice> GetMappedInvoicesBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
         
         /// <summary>
         /// Create invoice.
@@ -501,6 +501,17 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The newly created invoice.
         /// </returns>
         Invoice CreateInvoice(Invoice invoice);
+
+        /// <summary>
+        /// Create proforma invoice.
+        /// </summary>
+        /// <param name="proformaInvoice">
+        /// The proforma invoice to be created.
+        /// </param>
+        /// <returns>
+        /// The newly created proforma invoice.
+        /// </returns>
+        Invoice CreateProformaInvoice(Invoice proformaInvoice);
         
         /// <summary>
         /// Delete invoice map.
