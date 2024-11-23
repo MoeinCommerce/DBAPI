@@ -3,11 +3,12 @@ namespace DatabaseApi.Models
     public class InvoiceItem
     {
         public int InvoiceId { get; set; }
-        public string ProductName { get; set; }
-        public decimal Quantity { get; set; }
-        public decimal DiscountPercentage { get; set; }
-        public decimal Price { get; set; }
-        public decimal TotalPrice { get; set; }
-        public string  WarehouseName { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+        public int WarehouseId { get; set; }
+        public string RegularPrice { get; set; }
+        public string SubtotalTax { get; set; }
+        public string TotalTax { get; set; }
+        public string SalePrice { get; set; }
     }
 }
