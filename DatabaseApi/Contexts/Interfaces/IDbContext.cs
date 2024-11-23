@@ -426,6 +426,93 @@ namespace DatabaseApi.Contexts.Interfaces
         
         #endregion
 
+        
+        #region Customers
+        
+        /// <summary>
+        /// Retrieve customers filtered by search input.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering customers. If searchInput is null or empty, all customers are returned.
+        /// </param>
+        /// <param name="pageNumber">
+        /// The page number to retrieve.
+        /// </param>
+        /// <param name="pageSize">
+        /// The number of customers per page.
+        /// </param>
+        /// <returns>
+        /// Returns a paginated list of customers that match the search term.
+        /// </returns>
+        IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize);
+        
+        
+        /// <summary>
+        /// Creates a mapping between a customer and a corresponding web representation.
+        /// </summary>
+        /// <param name="customer">
+        /// The customer to be mapped, including the ID, WebId, and TargetWeb values.
+        /// </param>
+        void CreateCustomerMap (Customer customer);
+        
+        
+        /// <summary>
+        /// Deletes a mapping that links a customer to its web representation.
+        /// </summary>
+        /// <param name="customer">
+        /// The customer whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
+        /// </param>
+        void DeleteCustomerMap(Customer customer);
+        
+        #endregion
+        
+        #region Invoices
+        
+        /// <summary>
+        /// Retrieves all invoices from the database.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering invoices. If searchInput is null or empty, all invoices are returned.
+        /// This parameter is used to filter invoices by invoice code.
+        /// </param>
+        /// <param name="pageNumber">
+        /// The page number to retrieve.
+        /// </param>
+        /// <param name="pageSize">
+        /// The number of invoices per page.
+        /// </param>
+        /// <param name="startDate">
+        /// The start date to filter invoices. if startDate is null, all invoices that are created before endDate are returned.
+        /// </param>
+        /// <param name="endDate">
+        /// The end date to filter invoices. if endDate is null, all invoices that are created after startDate are returned.
+        /// </param>
+        /// <returns>
+        /// Returns a paginated list of invoices that match the search term, start date and end date.
+        /// </returns>
+        IEnumerable<Invoice> GetInvoicesBySearch(string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
+        
+        /// <summary>
+        /// Create invoice.
+        /// </summary>
+        /// <param name="invoice">
+        /// The invoice to be created.
+        /// </param>
+        /// <returns>
+        /// The newly created invoice.
+        /// </returns>
+        Invoice CreateInvoice(Invoice invoice);
+        
+        /// <summary>
+        /// Delete invoice map.
+        /// </summary>
+        /// <param name="invoice">
+        /// The invoice whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
+        /// </param>
+        void DeleteInvoiceMap(Invoice invoice);
+        
+        #endregion
+        
         #region Other Methods
 
         /// <summary>
