@@ -427,7 +427,7 @@ namespace DatabaseApi.Contexts.Interfaces
         #endregion
         
         #region Customers
-        
+
         /// <summary>
         /// Retrieve customers filtered by search input.
         /// </summary>
@@ -440,11 +440,91 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="pageSize">
         /// The number of customers per page.
         /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering customers.
+        /// </param>
         /// <returns>
         /// Returns a paginated list of customers that match the search term.
         /// </returns>
-        IEnumerable<Customer> GetCustomersBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize);
+        IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         
+        /// <summary>
+        /// Retrieves the number of customers that match a search term on a specified web platform.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering customers.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering customers.
+        /// </param>
+        /// <returns></returns>
+        int GetTotalCustomersCount(string searchInput, int targetWeb);
+        
+        /// <summary>
+        /// Retrieves mapped customers from the database.
+        /// </summary>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering customers.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<Customer> GetMappedCustomers(int targetWeb);
+        
+        /// <summary>
+        /// Retrieves customers that are mapped to other customers.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering mapped customers. If searchInput is null or empty, all customers are returned.
+        /// </param>
+        /// <param name="pageNumber">
+        /// The page number to retrieve.
+        /// </param>
+        /// <param name="pageSize">
+        /// The number of customers per page.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering mapped customers.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<Customer> GetMappedCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        
+        /// <summary>
+        /// Retrieves the number of customers that are mapped to other customers on a specified web platform.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering mapped customers.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering mapped customers.
+        /// </param>
+        /// <returns></returns>
+        int GetTotalMappedCustomersCount(string searchInput, int targetWeb);
+        
+        /// <summary>
+        /// Retrieves customers that are not mapped to other customers.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering unmapped customers. If searchInput is null or empty, all customers are returned.
+        /// </param>
+        /// <param name="pageNumber">
+        /// The page number to retrieve.
+        /// </param>
+        /// <param name="pageSize">
+        /// The number of customers per page.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering unmapped customers.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<Customer> GetUnMappedCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        
+        /// <summary>
+        /// Retrieves the number of customers that are not mapped to other customers on a specified web platform.
+        /// </summary>
+        /// <param name="searchInput">
+        /// The search term for filtering unmapped customers.
+        /// </param>
+        /// <returns></returns>
+        int GetTotalUnMappedCustomersCount(string searchInput);
         
         /// <summary>
         /// Creates a mapping between a customer and a corresponding web representation.
