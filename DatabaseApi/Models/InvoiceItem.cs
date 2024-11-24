@@ -6,6 +6,7 @@ namespace DatabaseApi.Models
         public int InvoiceId { get; set; }
         public int ProductId { get; set; }
         public int WarehouseId { get; set; }
+        public int PriceId { get; set; }
 
         // Base Properties
         public double UnitPrice { get; set; }
