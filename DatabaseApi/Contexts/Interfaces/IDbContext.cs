@@ -86,11 +86,14 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of products that are not mapped to other products.
         /// </returns>
         IEnumerable<Product> GetUnMappedProducts();
-        
+
         /// <summary>
         /// Retrieve products filtered by list of ids.
         /// </summary>
+        /// <param name="targetWeb"></param>
         /// <param name="ids"></param>
+        /// <param name="priceLevel"></param>
+        /// <param name="warehouse"></param>
         /// <returns></returns>
         IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<int> ids, PriceLevel priceLevel,Warehouse warehouse = null);
 
@@ -542,7 +545,38 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The customer whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
         /// </param>
         void DeleteCustomerMap(Customer customer);
+
+
+        /// <summary>
+        /// Retrieve products filtered by list of ids.
+        /// </summary>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering products.
+        /// </param>
+        /// <param name="ids">
+        /// The list of ids to filter products.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<Customer> GetCustomersByIds(int targetWeb, IEnumerable<int> ids);
         
+        /// <summary>
+        /// Retrieves customers that are not mapped to other customers of webSite.
+        /// </summary>
+        /// <returns>
+        /// A list of customer that are not mapped to other customers of webSite.
+        /// </returns>
+        /// <param name="targetWeb">
+        /// Website id that should be used to filter customers. and then filter customers that are
+        /// not mapped to other customers of webSite.
+        /// </param>
+        IEnumerable<Customer> GetUnMappedCustomers(int targetWeb);
+        
+        /// <summary>
+        /// Creates a new customer in the customer table and generates a mapping to its web representation.
+        /// </summary>
+        /// <param name="customer"></param>
+        /// <returns></returns>
+        Customer CreateCustomer(Customer customer);
         #endregion
         
         #region Invoices
