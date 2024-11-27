@@ -85,7 +85,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A list of products that are not mapped to other products.
         /// </returns>
-        IEnumerable<Product> GetUnMappedProducts();
+        IEnumerable<Product> GetUnMappedProducts(int targetWeb);
 
         /// <summary>
         /// Retrieve products filtered by list of ids.
@@ -215,7 +215,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The search term for filtering unmapped products.
         /// </param>
         /// <returns></returns>
-        int GetTotalUnMappedProductsCount(string searchInput);
+        int GetTotalUnMappedProductsCount(string searchInput, int targetWeb);
 
         /// <summary>
         /// Retrieves all products that require updates on a specified website.
@@ -315,7 +315,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A list of categories that are not mapped to other categories.
         /// </returns>
-        IEnumerable<Category> GetUnMappedCategories();
+        IEnumerable<Category> GetUnMappedCategories(int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered categories to a specified web platform, using a search term.
@@ -378,7 +378,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of categories not mapped to other categories on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize);
+        IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
 
         /// <summary>
         /// Retrieves all categories that require updates on a specified website.
@@ -527,7 +527,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The search term for filtering unmapped customers.
         /// </param>
         /// <returns></returns>
-        int GetTotalUnMappedCustomersCount(string searchInput);
+        int GetTotalUnMappedCustomersCount(string searchInput, int targetWeb);
         
         /// <summary>
         /// Creates a mapping between a customer and a corresponding web representation.
