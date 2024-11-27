@@ -582,6 +582,15 @@ namespace DatabaseApi.Contexts.Interfaces
         #region Invoices
         
         /// <summary>
+        /// Retrieves all invoices from the database. filtered by target web.
+        /// </summary>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering invoices.
+        /// </param>
+        /// <returns></returns>
+        IEnumerable<Invoice> GetMappedInvoices(int targetWeb);
+        
+        /// <summary>
         /// Retrieves all invoices from the database.
         /// </summary>
         /// <param name="searchInput">
