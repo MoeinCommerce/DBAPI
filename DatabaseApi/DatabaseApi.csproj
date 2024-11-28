@@ -57,6 +57,7 @@
     <Compile Include="Models\MappableModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
     <Compile Include="Models\PriceLevel.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Shipping.cs" />

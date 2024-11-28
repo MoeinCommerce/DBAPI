@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca88df16-7f15-44fa-8c7d-1eec43cacac6" name="Changes" comment="">
+    <list default="true" id="ca88df16-7f15-44fa-8c7d-1eec43cacac6" name="Changes" comment="Add GetMappedInvoices method into DbContext interface">
+      <change afterPath="$PROJECT_DIR$/DatabaseApi/Models/PaymentMethod.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DatabaseApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DatabaseApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/IDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Contexts/Interfaces/IDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseApi/DatabaseApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/DatabaseApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatabaseApi/Models/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DatabaseApi/Models/Customer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +85,7 @@
       <workItem from="1732458681728" duration="752000" />
       <workItem from="1732539649293" duration="38000" />
       <workItem from="1732540110708" duration="2172000" />
+      <workItem from="1732692232994" duration="3520000" />
     </task>
     <task id="LOCAL‎−۰۰۰۰۱" summary="Add isRequiredUpdate entry into methods that work with EntityMap tables">
       <option name="closed" value="true" />
@@ -273,7 +276,14 @@
       <option name="presentableId" value="LOCAL‎−۰۰۰۲۷" />
       <updated>1732372118345</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL‎−۰۰۰۲۸" summary="Add GetMappedInvoices method into DbContext interface">
+      <option name="closed" value="true" />
+      <created>1732692392891</created>
+      <option name="number" value="LOCAL‎−۰۰۰۲۸" />
+      <option name="presentableId" value="LOCAL‎−۰۰۰۲۸" />
+      <updated>1732692392891</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +304,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Create Warehouse.cs model" />
     <MESSAGE value="Create PriceLevel.cs model" />
     <MESSAGE value="Remove extra classes from project" />
     <MESSAGE value="Create BaseCompanyContext abstract class for implementing ICompanyContext interface" />
@@ -319,7 +328,8 @@
     <MESSAGE value="Add methods of person and invoice into IDbContext interface" />
     <MESSAGE value="Create Billing and Shipping models" />
     <MESSAGE value="Add Customer methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Customer methods" />
+    <MESSAGE value="Add GetMappedInvoices method into DbContext interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add GetMappedInvoices method into DbContext interface" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
