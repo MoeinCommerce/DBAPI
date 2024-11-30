@@ -645,7 +645,25 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteInvoiceMap(Invoice invoice);
         
         #endregion
+
+        #region PaymentMethods
+
+        PaymentMethod CreatePaymentMethod(PaymentMethod paymentMethod);
         
+        IEnumerable<PaymentMethod> GetMappedPaymentMethods(int targetWeb);
+        
+        void DeletePaymentMethodMap(PaymentMethod paymentMethod);
+        
+        IEnumerable<PaymentMethod> GetPaymentMethodsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        int GetTotalPaymentMethodsCount(string searchInput, int targetWeb);
+        
+        IEnumerable<PaymentMethod> GetMappedPaymentMethodsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        int GetTotalMappedPaymentMethodsCount(string searchInput, int targetWeb);
+        
+        IEnumerable<PaymentMethod> GetUnMappedPaymentMethodsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        int GetTotalUnMappedPaymentMethodsCount(string searchInput, int targetWeb);
+        
+        #endregion
         #region Other Methods
 
         IEnumerable<TModel> ExecuteRawSqlTemporary<TModel>(string query);
