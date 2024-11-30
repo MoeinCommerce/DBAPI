@@ -52,6 +52,7 @@
     <Compile Include="Models\Billing.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\DbConfig.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\PreInvoice.cs" />
     <Compile Include="Models\InvoiceItem.cs" />
