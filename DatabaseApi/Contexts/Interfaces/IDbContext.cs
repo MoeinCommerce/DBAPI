@@ -588,11 +588,12 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The ID of the target web platform for filtering invoices.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Invoice> GetMappedInvoices(int targetWeb);
-        
+        IEnumerable<PreInvoice> GetMappedInvoices(int targetWeb);
+
         /// <summary>
         /// Retrieves all invoices from the database.
         /// </summary>
+        /// <param name="targetWeb"></param>
         /// <param name="searchInput">
         /// The search term for filtering invoices. If searchInput is null or empty, all invoices are returned.
         /// This parameter is used to filter invoices by invoice code.
@@ -612,37 +613,37 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// Returns a paginated list of invoices that match the search term, start date and end date.
         /// </returns>
-        IEnumerable<Invoice> GetMappedInvoicesBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
+        IEnumerable<PreInvoice> GetMappedInvoicesBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
         
         /// <summary>
-        /// Create invoice.
+        /// Create preInvoice.
         /// </summary>
-        /// <param name="invoice">
-        /// The invoice to be created.
+        /// <param name="preInvoice">
+        /// The preInvoice to be created.
         /// </param>
         /// <returns>
-        /// The newly created invoice.
+        /// The newly created preInvoice.
         /// </returns>
-        Invoice CreateInvoice(Invoice invoice);
+        PreInvoice CreateInvoice(PreInvoice preInvoice);
 
         /// <summary>
-        /// Create proforma invoice.
+        /// Create proforma preInvoice.
         /// </summary>
-        /// <param name="proformaInvoice">
-        /// The proforma invoice to be created.
+        /// <param name="proformaPreInvoice">
+        /// The proforma preInvoice to be created.
         /// </param>
         /// <returns>
-        /// The newly created proforma invoice.
+        /// The newly created proforma preInvoice.
         /// </returns>
-        Invoice CreateProformaInvoice(Invoice proformaInvoice);
+        PreInvoice CreateProformaInvoice(PreInvoice proformaPreInvoice);
         
         /// <summary>
-        /// Delete invoice map.
+        /// Delete preInvoice map.
         /// </summary>
-        /// <param name="invoice">
-        /// The invoice whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
+        /// <param name="preInvoice">
+        /// The preInvoice whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
         /// </param>
-        void DeleteInvoiceMap(Invoice invoice);
+        void DeleteInvoiceMap(PreInvoice preInvoice);
         
         #endregion
 

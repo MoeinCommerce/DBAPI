@@ -52,7 +52,8 @@
     <Compile Include="Models\Billing.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\DbConfig.cs" />
-    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PreInvoice.cs" />
     <Compile Include="Models\InvoiceItem.cs" />
     <Compile Include="Models\MappableModel.cs" />
     <Compile Include="Models\Category.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Models\PaymentMethod.cs" />
     <Compile Include="Models\PriceLevel.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\SellInvoice.cs" />
     <Compile Include="Models\Shipping.cs" />
     <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

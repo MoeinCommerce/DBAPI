@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace DatabaseApi.Models
 {
-    public class Invoice : MappableModel
+    public class PreInvoice : MappableModel
     {
         // Foreign Key
         public int PersonId { get; set; }
 
-        // Invoice Items
+        // PreInvoice Items
         public List<InvoiceItem> InvoiceItems { get; set; }
 
-        // Invoice Details
+        // PreInvoice Details
         public string Status { get; set; }
         public DateTime InvoiceDate { get; set; }
         public Billing Billing { get; set; }
