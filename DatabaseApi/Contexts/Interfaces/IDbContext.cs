@@ -648,7 +648,7 @@ namespace DatabaseApi.Contexts.Interfaces
 
         #region PaymentMethods
 
-        PaymentMethod CreatePaymentMethod(PaymentMethod paymentMethod);
+        PaymentMethod CreatePaymentMethodMap(PaymentMethod paymentMethod);
         
         IEnumerable<PaymentMethod> GetMappedPaymentMethods(int targetWeb);
         
@@ -664,6 +664,7 @@ namespace DatabaseApi.Contexts.Interfaces
         int GetTotalUnMappedPaymentMethodsCount(string searchInput, int targetWeb);
         
         #endregion
+
         #region Other Methods
 
         IEnumerable<TModel> ExecuteRawSqlTemporary<TModel>(string query);
