@@ -337,6 +337,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A paginated list of categories to the specified web platform that match the search term.
         /// </returns>
         IEnumerable<Category> GetCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        
+        int GetTotalCategoriesCount(string searchInput, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered categories mapped to other categories on a specified web platform, using a search term.
@@ -359,6 +361,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Category> GetMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
 
+        int GetTotalMappedCategoriesCount(string searchInput, int targetWeb);
+        
         /// <summary>
         /// Retrieves paginated and filtered categories that are not mapped to other categories on a specified web platform, using a search term.
         /// </summary>
@@ -379,6 +383,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A paginated list of categories not mapped to other categories on the specified web platform that match the search term.
         /// </returns>
         IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        
+        int GetTotalUnMappedCategoriesCount(string searchInput, int targetWeb);
 
         /// <summary>
         /// Retrieves all categories that require updates on a specified website.
