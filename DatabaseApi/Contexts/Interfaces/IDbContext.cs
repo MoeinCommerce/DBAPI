@@ -12,6 +12,14 @@ namespace DatabaseApi.Contexts.Interfaces
         #region Product
         
         /// <summary>
+        /// Retrieves product by webId.
+        /// </summary>
+        /// <param name="webId"></param>
+        /// <param name="targetWeb"></param>
+        /// <returns></returns>
+        Product GetProductByWebId(int webId, int targetWeb);
+        
+        /// <summary>
         /// Creates a mapping between a product and a corresponding web representation.
         /// This mapping links the product to its representation on a specific website.
         /// </summary>
@@ -456,6 +464,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// Returns a paginated list of customers that match the search term.
         /// </returns>
         IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+        
+        Customer GetCustomerByWebId(int webId, int targetWeb);
         
         /// <summary>
         /// Retrieves the number of customers that match a search term on a specified web platform.
