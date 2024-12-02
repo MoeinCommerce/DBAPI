@@ -9,7 +9,7 @@ namespace DatabaseApi.Models
         public int PersonId { get; set; }
 
         // PreInvoice Items
-        public List<InvoiceItem> InvoiceItems { get; set; }
+        public List<InvoiceItem> InvoiceItems { get; set; } = new List<InvoiceItem>();
 
         // PreInvoice Details
         public string Status { get; set; }
