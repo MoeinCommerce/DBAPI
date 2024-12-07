@@ -19,7 +19,6 @@ namespace DatabaseApi.Models
 
         // Base Properties
         public double InvoiceDiscount { get; set; }
-        public double InvoiceTax { get; set; }
         public double CarryPrice { get; set; }
 
         // Computational Properties
@@ -57,7 +56,7 @@ namespace DatabaseApi.Models
         {
             get
             {
-                double tax = InvoiceTax;
+                double tax = 0;
                 foreach (var invoiceItem in InvoiceItems)
                 {
                     tax += invoiceItem.Tax;
