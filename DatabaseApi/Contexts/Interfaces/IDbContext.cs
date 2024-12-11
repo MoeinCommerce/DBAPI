@@ -16,8 +16,9 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </summary>
         /// <param name="webId"></param>
         /// <param name="targetWeb"></param>
+        /// <param name="warehouse"></param>
         /// <returns></returns>
-        Product GetProductByWebId(int webId, int targetWeb);
+        Product GetProductByWebId(int webId, Warehouse warehouse, int targetWeb);
         
         /// <summary>
         /// Creates a mapping between a product and a corresponding web representation.
