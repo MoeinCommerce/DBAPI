@@ -244,11 +244,19 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of products that need to be updated on the specified web platform.
         /// </returns>
         IEnumerable<Product> GetProductsNeedToUpdate(int targetWeb, PriceLevel priceLevel, Warehouse warehouse = null);
-        
+
+        /// <summary>
+        /// Retrive stock of specific product on each warehouse.
+        /// </summary>
+        /// <param name="prodcutId">Id of product</param>
+        /// <param name="warehouseIds">List of warehouse id</param>
+        /// <returns>List of tuples include warehouse id and stock of that warehouse.</returns>
+        List<(int WarehouseId, int Stock)> GetProductStocksByWarehouseIds(int prodcutId, List<int> warehouseIds);
+
         #endregion
 
         #region Category
-        
+
         /// <summary>
         /// Retrieves category by id.
         /// </summary>
