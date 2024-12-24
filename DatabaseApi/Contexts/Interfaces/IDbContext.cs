@@ -86,7 +86,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A list of products that are mapped to other products on the specified web platform.
         /// </returns>
-        IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+        IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel, Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves products that are not mapped to other products.
