@@ -88,6 +88,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel, Warehouse warehouse = null);
 
+        IEnumerable<int> GetProductWebIds(int targetWeb);
+
         /// <summary>
         /// Retrieves products that are not mapped to other products.
         /// </summary>
