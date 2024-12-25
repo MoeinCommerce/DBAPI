@@ -255,7 +255,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>List of tuples include warehouse id and stock of that warehouse.</returns>
         List<(int WarehouseId, int Stock)> GetProductStocksByWarehouseIds(int prodcutId, List<int> warehouseIds);
 
-        void SetProductsUpdateStatus(bool updateRequired);
+        void SetProductsUpdateStatus(int targetWeb, bool updateRequired);
 
         #endregion
 
@@ -434,7 +434,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns></returns>
         IEnumerable<Category> GetCategoriesByWebId(int targetWeb, int webId);
 
-        void SetProductCategoriesUpdateStatus(bool updateRequired);
+        void SetProductCategoriesUpdateStatus(int targetWeb, bool updateRequired);
 
         #endregion
 
