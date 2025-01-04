@@ -1,10 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 
 namespace DatabaseApi.Models
 {
     public class Invoice : MappableModel
     {
+        // Private Variables
+        private double? _total;
+        private double? _tax;
+        private double? _discount;
+        private double? _itemsDiscount;
+        private double? _subTotal;
+
         // Foreign Key
         public int PersonId { get; set; }
 
@@ -26,6 +34,11 @@ namespace DatabaseApi.Models
         { 
             get
             {
+                if (_subTotal != null)
+                {
+                    return _subTotal.Value;
+                }
+
                 double subTotal = 0;
                 foreach (var invoiceItem in InvoiceItems)
                 {
@@ -33,13 +46,22 @@ namespace DatabaseApi.Models
                 }
 
                 return subTotal;
-            } 
+            }
+            set
+            {
+                _subTotal = value;
+            }
         }
 
         public double ItemsDiscount
         { 
             get
             {
+                if (_itemsDiscount != null)
+                {
+                    return _itemsDiscount.Value;
+                }
+
                 double itemsDiscount = 0;
                 foreach (var invoiceItem in InvoiceItems)
                 {
@@ -48,14 +70,38 @@ namespace DatabaseApi.Models
 
                 return itemsDiscount;
             }
+            set
+            {
+                _itemsDiscount = value;
+            }
         }
 
-        public double Discount => ItemsDiscount + InvoiceDiscount;
+        public double Discount
+        {
+            get
+            {
+                if (_discount != null)
+                {
+                    return _discount.Value;
+                }
+
+                return ItemsDiscount + InvoiceDiscount;
+            }
+            set
+            {
+                _discount = value;
+            }
+        }
 
         public double Tax
         {
             get
             {
+                if (_tax != null)
+                {
+                    return _tax.Value;
+                }
+
                 double tax = 0;
                 foreach (var invoiceItem in InvoiceItems)
                 {
@@ -64,8 +110,27 @@ namespace DatabaseApi.Models
 
                 return tax;
             }
+            set
+            {
+                _tax = value;
+            }
         }
 
-        public double Total => SubTotal - Discount + Tax + CarryPrice;
+        public double Total
+        {
+            get
+            {
+                if (_total != null)
+                {
+                    return _total.Value;
+                }
+
+                return SubTotal - Discount + Tax + CarryPrice;
+            }
+            set
+            {
+                _total = value;
+            }
+        }
     }
 }
