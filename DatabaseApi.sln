@@ -7,14 +7,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseApi", "DatabaseApi\
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Compile|Any CPU = Compile|Any CPU
+		Compile|x86 = Compile|x86
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Compile|Any CPU.ActiveCfg = Compile|Any CPU
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Compile|Any CPU.Build.0 = Compile|Any CPU
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Compile|x86.ActiveCfg = Compile|x86
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Compile|x86.Build.0 = Compile|x86
 		{7D60F84F-5504-4383-9C25-B45796D143CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D60F84F-5504-4383-9C25-B45796D143CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Debug|x86.ActiveCfg = Debug|x86
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Debug|x86.Build.0 = Debug|x86
 		{7D60F84F-5504-4383-9C25-B45796D143CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D60F84F-5504-4383-9C25-B45796D143CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Release|x86.ActiveCfg = Release|x86
+		{7D60F84F-5504-4383-9C25-B45796D143CB}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
