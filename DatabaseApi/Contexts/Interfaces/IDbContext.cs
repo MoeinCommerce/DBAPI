@@ -676,6 +676,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </param>
         void DeleteInvoiceMap(Invoice invoice);
         
+        List<int> GetOrderIds(int targetWeb);
+        
         #endregion
 
         #region PaymentMethods
