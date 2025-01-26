@@ -19,6 +19,7 @@ namespace DatabaseApi.Models
         // PreInvoice Details
         public int? InvoiceNumber { get; set; }
         public Customer Customer { get; set; }
+        public string Type { get; set; }
         public string Status { get; set; }
         public DateTime InvoiceDate { get; set; }
         public Billing Billing { get; set; }
