@@ -20,6 +20,7 @@ namespace DatabaseApi.Models
         public List<InvoiceItem> InvoiceItems { get; set; } = new List<InvoiceItem>();
 
         // PreInvoice Details
+        public int? InvoiceNumber { get; set; }
         public string Status { get; set; }
         public DateTime InvoiceDate { get; set; }
         public Billing Billing { get; set; }
