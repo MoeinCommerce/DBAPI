@@ -359,7 +359,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Category> GetCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         
-        int GetTotalCategoriesCount(string searchInput, int targetWeb);
+        int GetTotalCategoriesCount(string searchInput, int targetWeb, bool IsSuperGroup = false);
 
         /// <summary>
         /// Retrieves paginated and filtered categories mapped to other categories on a specified web platform, using a search term.
@@ -382,7 +382,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Category> GetMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
 
-        int GetTotalMappedCategoriesCount(string searchInput, int targetWeb);
+        int GetTotalMappedCategoriesCount(string searchInput, int targetWeb, bool IsSuperGroup = false);
         
         /// <summary>
         /// Retrieves paginated and filtered categories that are not mapped to other categories on a specified web platform, using a search term.
@@ -405,7 +405,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Category> GetUnMappedCategoriesBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         
-        int GetTotalUnMappedCategoriesCount(string searchInput, int targetWeb);
+        int GetTotalUnMappedCategoriesCount(string searchInput, int targetWeb, bool IsSuperGroup = false);
 
         /// <summary>
         /// Retrieves all categories that require updates on a specified website.
@@ -675,7 +675,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The preInvoice whose ID, WebId, and TargetWeb are used to identify and delete the mapping.
         /// </param>
         void DeleteInvoiceMap(Invoice invoice);
-        
+
         List<int> GetOrderIds(int targetWeb);
         
         #endregion
