@@ -13,13 +13,11 @@ namespace DatabaseApi.Models
         private double? _itemsDiscount;
         private double? _subTotal;
 
-        // Foreign Key
-        public int PersonId { get; set; }
-
         // PreInvoice Items
         public List<InvoiceItem> InvoiceItems { get; set; } = new List<InvoiceItem>();
 
         // PreInvoice Details
+        public Customer Customer { get; set; }
         public string Status { get; set; }
         public DateTime InvoiceDate { get; set; }
         public Billing Billing { get; set; }
