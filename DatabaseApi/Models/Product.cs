@@ -18,5 +18,7 @@ namespace DatabaseApi.Models
         public int StockQuantity { get; set; }
         public int? CategoryId { get; set; }
         public DateTime CreatedDate { get; set; }
+        public bool IsVariable { get; set; }
+        public bool IsVariation { get; set; }
     }
 }
