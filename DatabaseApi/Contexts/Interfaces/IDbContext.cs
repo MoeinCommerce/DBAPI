@@ -284,8 +284,8 @@ namespace DatabaseApi.Contexts.Interfaces
         List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
         List<Product> GetProductsByCollectionId(int collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByProductId(int productId, int targetWebId);
-        void DeleteProductForgienKeyFromCollectionProductTableByCollectionId(int collectionId, int targetWebId);
-        void DeleteProductForgienKeyFromCollectionProductTableByWebId(int webId, int targetWebId);
+        void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(int collectionId, int targetWebId);
+        void DeleteProductForeignKeyFromCollectionProductTableByWebId(int webId, int targetWebId);
         void DeleteProductMapById(int id);
         void DeleteProductMapByWebId(int webId, int targetWebId);
         void DeleteProductMapByCollectionId(int collectionId, int targetWebId);
