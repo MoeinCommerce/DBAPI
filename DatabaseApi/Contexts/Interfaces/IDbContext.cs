@@ -791,7 +791,8 @@ namespace DatabaseApi.Contexts.Interfaces
         
         IEnumerable<PaymentMethod> GetUnMappedPaymentMethodsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         int GetTotalUnMappedPaymentMethodsCount(string searchInput, int targetWeb);
-        
+        IEnumerable<FundModel> GetFundsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
+         
         #endregion
 
         #region Other Methods
