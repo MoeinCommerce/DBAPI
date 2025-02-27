@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// System
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+
 
 namespace DatabaseApi.Models
 {

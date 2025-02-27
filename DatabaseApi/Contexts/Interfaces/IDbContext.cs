@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DatabaseApi.Exceptions;
+﻿// DatabaseApi
 using DatabaseApi.Models;
+using DatabaseApi.Exceptions;
+
+// System
+using System;
+using System.Collections.Generic;
+
 
 namespace DatabaseApi.Contexts.Interfaces
 {
