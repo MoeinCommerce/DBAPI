@@ -11,6 +11,7 @@ namespace DatabaseApi.Models
         public double FareAmount { get; set; }
         public FareType FareType { get; set; }
         public DestinationAccount? DestinationAccount { get; set; }
+        public int? DestinationId { get; set; }
         public DateTime? PaymentDate { get; set; }
         public string Description { get; set; }
         public VehicleInfo Vehicle { get; set; }
