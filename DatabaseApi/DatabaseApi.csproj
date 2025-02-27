@@ -110,6 +110,7 @@
     <Compile Include="Models\SellInvoice.cs" />
     <Compile Include="Models\Shipping.cs" />
     <Compile Include="Models\VariableModel.cs" />
+    <Compile Include="Models\VehicleFare.cs" />
     <Compile Include="Models\Warehouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

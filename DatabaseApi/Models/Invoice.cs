@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
 
 namespace DatabaseApi.Models
 {
     public class Invoice : MappableModel
     {
         // Private Variables
-        private double? _total;
         private double? _tax;
         private double? _discount;
         private double? _itemsDiscount;
@@ -27,8 +25,6 @@ namespace DatabaseApi.Models
 
         // Base Properties
         public double InvoiceDiscount { get; set; }
-        public double CarryPrice { get; set; }
-
         // Computational Properties
         public double SubTotal 
         { 
@@ -116,21 +112,10 @@ namespace DatabaseApi.Models
             }
         }
 
-        public double Total
+        public virtual double Total
         {
-            get
-            {
-                if (_total != null)
-                {
-                    return _total.Value;
-                }
-
-                return SubTotal - Discount + Tax + CarryPrice;
-            }
-            set
-            {
-                _total = value;
-            }
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
         }
     }
 }
