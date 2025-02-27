@@ -96,6 +96,7 @@
     <Compile Include="Models\CollectionProductModel.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\DbConfig.cs" />
+    <Compile Include="Models\FundModel.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\PreInvoice.cs" />
