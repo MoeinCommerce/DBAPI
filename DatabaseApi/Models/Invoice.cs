@@ -12,6 +12,7 @@ namespace DatabaseApi.Models
         private double? _discount;
         private double? _itemsDiscount;
         private double? _subTotal;
+        private double? _total;
 
         // PreInvoice Items
         public List<InvoiceItem> InvoiceItems { get; set; } = new List<InvoiceItem>();
@@ -117,7 +118,7 @@ namespace DatabaseApi.Models
         public virtual double Total
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            set => _total = value;
         }
     }
 }
