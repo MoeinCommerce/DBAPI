@@ -117,7 +117,7 @@ namespace DatabaseApi.Models
 
         public virtual double Total
         {
-            get => throw new NotImplementedException();
+            get => _total.Value;
             set => _total = value;
         }
     }
