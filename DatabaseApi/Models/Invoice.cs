@@ -121,4 +121,10 @@ namespace DatabaseApi.Models
             set => _total = value;
         }
     }
+    public enum InvoiceType
+    {
+        SellInvoice,
+        PreInvoice,
+        PurchaseInvoice
+    }
 }

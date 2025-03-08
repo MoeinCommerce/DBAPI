@@ -739,7 +739,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// Returns a paginated list of invoices that match the search term, start date and end date.
         /// </returns>
-        IEnumerable<Invoice> GetMappedInvoicesBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate);
+        IEnumerable<Invoice> GetMappedInvoicesBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate, InvoiceType? invoiceType = null);
         
         /// <summary>
         /// Create SellInvoice.
