@@ -14,13 +14,14 @@ namespace DatabaseApi.Models
         private double? _subTotal;
         private double? _total;
 
-        // PreInvoice Items
+        // Items
         public List<InvoiceItem> InvoiceItems { get; set; } = new List<InvoiceItem>();
 
-        // PreInvoice Details
+        // Details
         public int? InvoiceNumber { get; set; }
+        public int? TransactionId { get; set; }
         public Customer Customer { get; set; }
-        public string Type { get; set; }
+        public InvoiceType? Type { get; set; }
         public string Status { get; set; }
         public DateTime InvoiceDate { get; set; }
         public Billing Billing { get; set; }
@@ -121,6 +122,7 @@ namespace DatabaseApi.Models
             set => _total = value;
         }
     }
+
     public enum InvoiceType
     {
         SellInvoice,

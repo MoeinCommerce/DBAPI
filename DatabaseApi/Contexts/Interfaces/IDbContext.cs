@@ -714,7 +714,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The ID of the target web platform for filtering invoices.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Invoice> GetMappedInvoices(int targetWeb);
+        IEnumerable<Invoice> GetMappedInvoices(int targetWeb, InvoiceType? invoiceType = null);
 
         /// <summary>
         /// Retrieves all invoices from the database.
@@ -739,7 +739,15 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// Returns a paginated list of invoices that match the search term, start date and end date.
         /// </returns>
-        IEnumerable<Invoice> GetMappedInvoicesBySearch(int targetWeb, string searchInput, int pageNumber, int pageSize, DateTime startDate, DateTime endDate, InvoiceType? invoiceType = null);
+        IEnumerable<Invoice> GetMappedInvoicesBySearch(
+            int targetWeb,
+            string searchInput,
+            int pageNumber,
+            int pageSize,
+            DateTime startDate,
+            DateTime endDate,
+            InvoiceType? invoiceType = null
+            );
         
         /// <summary>
         /// Create SellInvoice.

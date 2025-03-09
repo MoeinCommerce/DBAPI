@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+
 namespace DatabaseApi.Models
 {
     public class SellInvoice : Invoice
     {
         private double? _total;
-        public Payment Payment { get; set; }
+        public List<Payment> Payments { get; set; }
         public VehicleFare VehicleFare { get; set; }
         public override double Total 
         {
