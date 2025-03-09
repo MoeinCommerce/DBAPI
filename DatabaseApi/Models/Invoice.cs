@@ -20,15 +20,16 @@ namespace DatabaseApi.Models
         // Details
         public int? InvoiceNumber { get; set; }
         public int? TransactionId { get; set; }
+        public string Description { get; set; }
         public Customer Customer { get; set; }
         public InvoiceType? Type { get; set; }
-        public string Status { get; set; }
-        public DateTime InvoiceDate { get; set; }
         public Billing Billing { get; set; }
         public Shipping Shipping { get; set; }
+        public DateTime InvoiceDate { get; set; }
 
         // Base Properties
         public double InvoiceDiscount { get; set; }
+
         // Computational Properties
         public double SubTotal 
         { 
