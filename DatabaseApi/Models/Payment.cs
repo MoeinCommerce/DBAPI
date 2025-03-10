@@ -8,6 +8,7 @@ namespace DatabaseApi.Models
     {
         public int InvoiceId { get; set; }
         public int PaymentMethodId { get; set; }
+        public string TransactionId { get; set; }
         public double Price { get; set; }
         public DateTime Date { get; set; }
     }

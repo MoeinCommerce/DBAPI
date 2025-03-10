@@ -19,7 +19,6 @@ namespace DatabaseApi.Models
 
         // Details
         public int? InvoiceNumber { get; set; }
-        public int? TransactionId { get; set; }
         public string Description { get; set; }
         public Customer Customer { get; set; }
         public InvoiceType? Type { get; set; }
