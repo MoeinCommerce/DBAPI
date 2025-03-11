@@ -714,7 +714,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The ID of the target web platform for filtering invoices.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Invoice> GetMappedInvoices(int targetWeb, InvoiceType? invoiceType = null);
+        IEnumerable<Invoice> GetMappedInvoices(int targetWeb, List<InvoiceType> invoiceType = null);
 
         /// <summary>
         /// Retrieves all invoices from the database.
@@ -746,7 +746,7 @@ namespace DatabaseApi.Contexts.Interfaces
             int pageSize,
             DateTime startDate,
             DateTime endDate,
-            InvoiceType? invoiceType = null
+            List<InvoiceType> invoiceType = null
             );
         
         /// <summary>
