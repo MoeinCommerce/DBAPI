@@ -348,6 +348,14 @@ namespace DatabaseApi.Contexts.Interfaces
         List<int> GetTargetWebIdsInCollection();
         void DeleteRowsFromCollectionTablesByTargetWebId(int targetWebId);
         List<AttributeModel> GetAttributesBySearch(string searchTerm);
+        bool AttributeValueExists(IDbContext dbContext, string value, List<string> ignoreValues = null);
+        bool AttributeExists(IDbContext dbContext, string name, List<string> ignoreNames = null);
+        bool CollectionExists(IDbContext dbContext, string name, List<string> ignoreNames = null);
+        List<int> GetMappedCollectionProductByCollectionId(int collectionId);
+        int GetTotalCollectionProductsCount(int collectionId, int targetWeb);
+        int GetTotalUnMappedCollectionProductsCount(int collectionId, int targetWeb);
+        List<int> GetCollectionProductIds(int targetWebId);
+        List<CollectionModel> GetCollectionsBySearch(string searchTerm, int targetWebId);
         
 
         #endregion
