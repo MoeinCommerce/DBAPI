@@ -347,6 +347,7 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeletePaymentMethodMapByTargetWebId(int targetWebId);
         List<int> GetTargetWebIdsInCollection();
         void DeleteRowsFromCollectionTablesByTargetWebId(int targetWebId);
+        List<AttributeModel> GetAttributesBySearch(string searchTerm);
         
 
         #endregion
