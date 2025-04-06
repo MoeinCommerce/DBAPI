@@ -349,9 +349,6 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteRowsFromCollectionTablesByTargetWebId(int targetWebId);
         List<AttributeModel> GetAttributesBySearch(string searchTerm);
         bool CollectionExists(string name, List<string> ignoreNames = null);
-        List<int> GetMappedCollectionProductByCollectionId(int collectionId);
-        int GetTotalCollectionProductsCount(int collectionId, int targetWeb);
-        int GetTotalUnMappedCollectionProductsCount(int collectionId, int targetWeb);
         List<int> GetCollectionProductIds(int targetWebId);
         List<CollectionModel> GetCollectionsBySearch(string searchTerm, int targetWebId);
 
