@@ -99,6 +99,7 @@
     <Compile Include="Models\FundModel.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PersonCategory.cs" />
     <Compile Include="Models\PreInvoice.cs" />
     <Compile Include="Models\InvoiceItem.cs" />
     <Compile Include="Models\MappableModel.cs" />
