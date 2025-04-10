@@ -351,7 +351,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool CollectionExists(string name, List<string> ignoreNames = null);
         List<int> GetCollectionProductIds(int targetWebId);
         List<CollectionModel> GetCollectionsBySearch(string searchTerm, int targetWebId);
-
+        List<PersonCategory> GetPersonCategoriesBySearch(string searchTerm, int targetWebId);
         #endregion
 
 
