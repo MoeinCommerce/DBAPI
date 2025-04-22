@@ -19,7 +19,7 @@ namespace DatabaseApi.Models
         public double UnitPrice { get; set; }
         public double UnitDiscount { get; set; }
         public double UnitTax { get; set; }
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         // Computational Properties
         public double SubTotal
