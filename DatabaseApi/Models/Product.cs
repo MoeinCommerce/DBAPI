@@ -13,7 +13,7 @@ namespace DatabaseApi.Models
         public decimal RegularPrice { get; set; }
         public decimal? SellPrice { get; set; }
         public int WarehouseId { get; set; }
-        public int StockQuantity { get; set; }
+        public double StockQuantity { get; set; }
         public int? CategoryId { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool IsVariable { get; set; }
