@@ -25,6 +25,7 @@ namespace DatabaseApi.Models
         public Billing Billing { get; set; }
         public Shipping Shipping { get; set; }
         public DateTime InvoiceDate { get; set; }
+        public VehicleFare VehicleFare { get; set; }
 
         // Base Properties
         public double InvoiceDiscount { get; set; }
@@ -115,11 +116,22 @@ namespace DatabaseApi.Models
                 _tax = value;
             }
         }
-
-        public virtual double Total
+        public double Total
         {
-            get => _total.Value;
-            set => _total = value;
+            get
+            {
+                if (_total != null)
+                {
+                    return _total.Value;
+                }
+
+                double vehicleFare = VehicleFare?.FareAmount ?? 0;
+                return SubTotal - Discount + Tax + vehicleFare;
+            }
+            set
+            {
+                _total = value;
+            }
         }
     }
 
