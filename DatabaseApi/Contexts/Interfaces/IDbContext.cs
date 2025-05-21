@@ -267,7 +267,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool AttributeExists(string name, List<string> ignoreNames = null);
         int CreateAttribute(AttributeModel attribute);
         int CreateAttributeValue(AttributeValueModel attributeValue);
-        bool AttributeValueExists(string value, List<string> ignoreValues = null);
+        bool AttributeValueExists(int attributeId, string value, List<string> ignoreValues = null);
         List<AttributeValueModel> GetAttributeValuesByAttributeId(int attributeId);
         bool IsAttributeValueUsedInCollection(int attributeId, int attributeValueId, int targetWeb);
         bool IsAttributeValueUsedInCollectionProduct(int attributeValueId, int targetWeb);
