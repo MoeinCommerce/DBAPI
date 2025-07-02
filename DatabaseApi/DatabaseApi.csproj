@@ -81,6 +81,7 @@
     <Compile Include="Contexts\BaseDatabaseContext.cs" />
     <Compile Include="Contexts\Interfaces\ICompanyContext.cs" />
     <Compile Include="Contexts\Interfaces\IDbContext.cs" />
+    <Compile Include="Exceptions\DatabaseErrorException.cs" />
     <Compile Include="Exceptions\DoesNotExistException.cs" />
     <Compile Include="Exceptions\ExceptionModel.cs" />
     <Compile Include="Exceptions\InvalidFieldException.cs" />
