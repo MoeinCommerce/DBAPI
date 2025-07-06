@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Exceptions
 {
-    public static class ExceptionFields
+    public static class DbExceptionFields
     {
         public const string DuplicateCategoryName = "DuplicateCategoryName";
         public const string InvalidCategoryId = "InvalidCategoryId";

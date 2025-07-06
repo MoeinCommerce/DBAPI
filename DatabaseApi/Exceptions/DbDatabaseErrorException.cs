@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatabaseApi.Exceptions
 {
-    public class DatabaseErrorException : Exception
+    public class DbDatabaseErrorException : Exception
     {
     }
 }

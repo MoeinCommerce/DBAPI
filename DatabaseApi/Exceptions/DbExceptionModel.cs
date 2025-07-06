@@ -4,7 +4,7 @@ using System;
 
 namespace DatabaseApi.Exceptions
 {
-    public class ExceptionModel : Exception
+    public class DbExceptionModel : Exception
     {
         /// <summary>
         /// The name of the field associated with the exception.
