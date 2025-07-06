@@ -83,6 +83,7 @@
     <Compile Include="Contexts\Interfaces\IDbContext.cs" />
     <Compile Include="Exceptions\DatabaseErrorException.cs" />
     <Compile Include="Exceptions\DoesNotExistException.cs" />
+    <Compile Include="Exceptions\ExceptionFields.cs" />
     <Compile Include="Exceptions\ExceptionModel.cs" />
     <Compile Include="Exceptions\InvalidFieldException.cs" />
     <Compile Include="IDbInformation.cs" />
