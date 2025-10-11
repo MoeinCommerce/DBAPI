@@ -1,5 +1,6 @@
 ﻿// System
 using System;
+using System.Collections.Generic;
 
 
 namespace DatabaseApi.Models
@@ -18,5 +19,6 @@ namespace DatabaseApi.Models
         public DateTime CreatedDate { get; set; }
         public bool IsVariable { get; set; }
         public bool IsVariation { get; set; }
+        public List<Price> Prices { get; set; }
     }
 }
