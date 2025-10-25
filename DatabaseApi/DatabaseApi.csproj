@@ -114,6 +114,7 @@
     <Compile Include="Models\ProductAttributeModel.cs" />
     <Compile Include="Models\SellInvoice.cs" />
     <Compile Include="Models\Shipping.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\VariableModel.cs" />
     <Compile Include="Models\VehicleFare.cs" />
     <Compile Include="Models\Warehouse.cs" />
