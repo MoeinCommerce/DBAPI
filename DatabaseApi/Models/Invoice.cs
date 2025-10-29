@@ -20,6 +20,9 @@ namespace DatabaseApi.Models
         // Details
         public int? InvoiceNumber { get; set; }
         public int? UserID { get; set; }
+        public int? VisitorID { get; set; }
+        public decimal? VisitorPercentage { get; set; }
+        public decimal? VisitorPrice { get; set; }
         public string Description { get; set; }
         public Customer Customer { get; set; }
         public InvoiceType? Type { get; set; }

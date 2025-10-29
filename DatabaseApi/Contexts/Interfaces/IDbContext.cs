@@ -809,6 +809,7 @@ namespace DatabaseApi.Contexts.Interfaces
         #region Users
 
         IEnumerable<User> GetUsersBySearch(string searchInput);
+        IEnumerable<Visitor> GetVisitorsBySearch(string searchInput);
 
         #endregion
 
