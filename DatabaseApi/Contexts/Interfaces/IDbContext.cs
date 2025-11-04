@@ -109,6 +109,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="warehouse"></param>
         /// <returns></returns>
         IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<int> ids, PriceLevel priceLevel,Warehouse warehouse = null);
+        Product GetProductById(int productid, int targetWeb, PriceLevel priceLevel,Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
