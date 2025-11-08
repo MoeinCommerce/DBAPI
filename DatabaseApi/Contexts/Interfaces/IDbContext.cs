@@ -323,9 +323,9 @@ namespace DatabaseApi.Contexts.Interfaces
         List<int> GetProductIdsByCollectionId(int collectionId, int targetWebId);
         int GetCountOfCollectionProductsByCollectionId(int collectionId, int targetWebId);
         int GetCountOfUnMappedCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        List<int> GetVariableWebIds(int targetWebId);
-        List<int> GetVariableWebIdsByCollectionId(int collectionId, int targetWebId);
-        List<int> GetMappedCollectionProductWebIdsByCollectionId(int collectionId, int targetWebId);
+        List<BigInteger> GetVariableWebIds(int targetWebId);
+        List<BigInteger> GetVariableWebIdsByCollectionId(int collectionId, int targetWebId);
+        List<BigInteger> GetMappedCollectionProductWebIdsByCollectionId(int collectionId, int targetWebId);
         bool VariableExists(int collectionId, BigInteger variableWebId, int targetWebId);
         int CreateVariable(VariableModel variable);
         void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, int productId, int targetWebId);
