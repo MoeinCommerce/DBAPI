@@ -1,5 +1,6 @@
 ﻿// System
 using System.Collections.ObjectModel;
+using System.Numerics;
 
 
 namespace DatabaseApi.Models
@@ -8,7 +9,7 @@ namespace DatabaseApi.Models
     {
         public string Description { get; set; }
         public int? ParentId { get; set; }
-        public int? ParentWebId { get; set; }
+        public BigInteger? ParentWebId { get; set; }
         public ObservableCollection<Category> SubCategories { get; set; }
     }
 }
