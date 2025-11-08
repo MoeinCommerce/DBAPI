@@ -108,7 +108,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="priceLevel"></param>
         /// <param name="warehouse"></param>
         /// <returns></returns>
-        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<BigInteger> ids, PriceLevel priceLevel,Warehouse warehouse = null);
+        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<int> ids, PriceLevel priceLevel,Warehouse warehouse = null);
         Product GetProductById(int productid, int targetWeb, PriceLevel priceLevel,Warehouse warehouse = null);
 
         /// <summary>
