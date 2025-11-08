@@ -1,10 +1,10 @@
 ﻿// DatabaseApi
-using DatabaseApi.Models;
 using DatabaseApi.Exceptions;
-
+using DatabaseApi.Models;
 // System
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 
 namespace DatabaseApi.Contexts.Interfaces
@@ -20,7 +20,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="targetWeb"></param>
         /// <param name="warehouse"></param>
         /// <returns></returns>
-        Product GetProductByWebId(int webId, int targetWeb, Warehouse warehouse = null);
+        Product GetProductByWebId(BigInteger webId, int targetWeb, Warehouse warehouse = null);
         
         /// <summary>
         /// Creates a mapping between a product and a corresponding web representation.
@@ -44,7 +44,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="targetWeb"></param>
         /// <param name="product"></param>
         /// <returns></returns>
-        Product UpdateProductMap(int id, int webId, int targetWeb, Product product);
+        Product UpdateProductMap(BigInteger id, BigInteger webId, int targetWeb, Product product);
 
         /// <summary>
         /// Creates a new product in the product table and generates a mapping to its web representation.
@@ -108,8 +108,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="priceLevel"></param>
         /// <param name="warehouse"></param>
         /// <returns></returns>
-        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<int> ids, PriceLevel priceLevel,Warehouse warehouse = null);
-        Product GetProductById(int productid, int targetWeb, PriceLevel priceLevel,Warehouse warehouse = null);
+        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<BigInteger> ids, PriceLevel priceLevel,Warehouse warehouse = null);
+        Product GetProductById(BigInteger productid, int targetWeb, PriceLevel priceLevel,Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
@@ -256,7 +256,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="prodcutId">Id of product</param>
         /// <param name="warehouseIds">List of warehouse id</param>
         /// <returns>List of tuples include warehouse id and stock of that warehouse.</returns>
-        List<(int WarehouseId, double Stock)> GetProductStocksByWarehouseIds(int productId, List<int> warehouseIds);
+        List<(int WarehouseId, double Stock)> GetProductStocksByWarehouseIds(BigInteger productId, List<int> warehouseIds);
 
         void SetProductsUpdateStatus(int targetWeb, bool updateRequired);
 
@@ -285,18 +285,18 @@ namespace DatabaseApi.Contexts.Interfaces
         List<int> GetAttributeValueIdsByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
         List<Product> GetProductsByCollectionId(int collectionId, int targetWebId);
-        List<AttributeValueModel> GetAttributeValuesByProductId(int productId, int targetWebId);
+        List<AttributeValueModel> GetAttributeValuesByProductId(BigInteger productId, int targetWebId);
         void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(int collectionId, int targetWebId);
-        void DeleteProductForeignKeyFromCollectionProductTableByWebId(int webId, int targetWebId);
+        void DeleteProductForeignKeyFromCollectionProductTableByWebId(BigInteger webId, int targetWebId);
         void DeleteProductMapById(int id);
         void DeleteProductMapByWebId(int webId, int targetWebId);
         void DeleteProductMapByCollectionId(int collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionAndProductId(int collectionId, int productId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(int collectionId, int productId, int attributeId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionAndProductId(int collectionId, BigInteger productId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(int collectionId, BigInteger productId, int attributeId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionProductIdAndAttributeId(int collectionProductId, int attributeId);
         void DeleteCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionProductsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
+        void DeleteCollectionProductsByCollectionAndProductId(int collectionId, BigInteger productId, int targetWebId);
         void DeleteCollectionAttributeValueByCollectionId(int collectionId, int targetWebId);
         void DeleteCollectionAttributeByCollectionId(int collectionId, int targetWebId);
         void DeleteVariableByCollectionId(int collectionId, int targetWebId);
@@ -319,7 +319,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool CollectionNameExists(string name, int collectionId, int targetWeb);
         List<Product> GetProductsNotInCollectionBySearch(string SearchProductTerm);
         List<Product> GetCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        List<int> GetCollectionProductIdsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
+        List<int> GetCollectionProductIdsByCollectionAndProductId(int collectionId, BigInteger productId, int targetWebId);
         List<int> GetProductIdsByCollectionId(int collectionId, int targetWebId);
         int GetCountOfCollectionProductsByCollectionId(int collectionId, int targetWebId);
         int GetCountOfUnMappedCollectionProductsByCollectionId(int collectionId, int targetWebId);
@@ -328,13 +328,13 @@ namespace DatabaseApi.Contexts.Interfaces
         List<int> GetMappedCollectionProductWebIdsByCollectionId(int collectionId, int targetWebId);
         bool VariableExists(int collectionId, int variableWebId, int targetWebId);
         int CreateVariable(VariableModel variable);
-        void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, int productId, int targetWebId);
-        List<int> GetSelectedProductAttributeValueId(int collectionId, int productId, int attributeId, int attributeValueId, int targetWebId);
-        List<int> GetCollectionProductsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
+        void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, BigInteger productId, int targetWebId);
+        List<int> GetSelectedProductAttributeValueId(int collectionId, BigInteger productId, int attributeId, int attributeValueId, int targetWebId);
+        List<int> GetCollectionProductsByCollectionAndProductId(int collectionId, BigInteger productId, int targetWebId);
         int CreateCollectionProduct(CollectionProductModel collectionProduct);
         void UpdateCollectionProductById(int collectionProductId, CollectionProductModel collectionProduct);
         void CreateCollectionProductAttributeValue(CollectionProductAttributeValueModel collectionProductAttributeValue);
-        List<AttributeValueMap> GetAttributeValueMapsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
+        List<AttributeValueMap> GetAttributeValueMapsByCollectionAndProductId(int collectionId, BigInteger productId, int targetWebId);
         List<VariableModel> GetMappedVariables(int targetWebId);
         List<int> GetTargetWebIdsInProductMap();
         void DeleteProductMapByTargetWebId(int targetWebId);
@@ -372,7 +372,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The ID of the category to retrieve.
         /// </param>
         /// <returns></returns>
-        Category GetCategoryById(int id);
+        Category GetCategoryById(BigInteger id);
         
         /// <summary>
         /// Creates a mapping between a category and a corresponding web representation.
@@ -395,7 +395,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="webId"></param>
         /// <param name="targetWeb"></param>
         /// <param name="category"></param>
-        void UpdateCategoryMap(int id, int webId, int targetWeb, Category category);
+        void UpdateCategoryMap(BigInteger id, BigInteger webId, int targetWeb, Category category);
 
         /// <summary>
         /// Creates a new category in the category table and generates a mapping to its web representation.
@@ -524,7 +524,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
-        IEnumerable<Category> GetCategoriesByIds(int targetWeb, IEnumerable<int> ids);
+        IEnumerable<Category> GetCategoriesByIds(int targetWeb, IEnumerable<BigInteger> ids);
         
         /// <summary>
         /// Retrieves all categories from the database. filtered by  web id.
@@ -536,7 +536,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The web id to filter categories.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, int webId);
+        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, BigInteger webId);
 
         void SetProductCategoriesUpdateStatus(int targetWeb, bool updateRequired);
 
@@ -584,7 +584,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         
-        Customer GetCustomerByWebId(int webId, int targetWeb);
+        Customer GetCustomerByWebId(BigInteger webId, int targetWeb);
         
         /// <summary>
         /// Retrieves the number of customers that match a search term on a specified web platform.
@@ -692,7 +692,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The list of ids to filter products.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Customer> GetCustomersByIds(int targetWeb, IEnumerable<int> ids);
+        IEnumerable<Customer> GetCustomersByIds(int targetWeb, IEnumerable<BigInteger> ids);
         
         /// <summary>
         /// Retrieves customers that are not mapped to other customers of webSite.
