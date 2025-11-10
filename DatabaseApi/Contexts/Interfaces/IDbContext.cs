@@ -20,7 +20,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="targetWeb"></param>
         /// <param name="warehouse"></param>
         /// <returns></returns>
-        Product GetProductByWebId(BigInteger webId, int targetWeb, Warehouse warehouse = null);
+        Product GetProductByWebId(long webId, int targetWeb, Warehouse warehouse = null);
         
         /// <summary>
         /// Creates a mapping between a product and a corresponding web representation.
@@ -44,7 +44,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="targetWeb"></param>
         /// <param name="product"></param>
         /// <returns></returns>
-        Product UpdateProductMap(int id, BigInteger webId, int targetWeb, Product product);
+        Product UpdateProductMap(int id, long webId, int targetWeb, Product product);
 
         /// <summary>
         /// Creates a new product in the product table and generates a mapping to its web representation.
@@ -90,7 +90,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel, Warehouse warehouse = null);
 
-        IEnumerable<BigInteger> GetProductWebIds(int targetWeb);
+        IEnumerable<long> GetProductWebIds(int targetWeb);
 
         /// <summary>
         /// Retrieves products that are not mapped to other products.
@@ -287,9 +287,9 @@ namespace DatabaseApi.Contexts.Interfaces
         List<Product> GetProductsByCollectionId(int collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByProductId(int productId, int targetWebId);
         void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(int collectionId, int targetWebId);
-        void DeleteProductForeignKeyFromCollectionProductTableByWebId(BigInteger webId, int targetWebId);
+        void DeleteProductForeignKeyFromCollectionProductTableByWebId(long webId, int targetWebId);
         void DeleteProductMapById(int id);
-        void DeleteProductMapByWebId(BigInteger webId, int targetWebId);
+        void DeleteProductMapByWebId(long webId, int targetWebId);
         void DeleteProductMapByCollectionId(int collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionId(int collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionAndProductId(int collectionId, int productId, int targetWebId);
@@ -323,10 +323,10 @@ namespace DatabaseApi.Contexts.Interfaces
         List<int> GetProductIdsByCollectionId(int collectionId, int targetWebId);
         int GetCountOfCollectionProductsByCollectionId(int collectionId, int targetWebId);
         int GetCountOfUnMappedCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        List<BigInteger> GetVariableWebIds(int targetWebId);
-        List<BigInteger> GetVariableWebIdsByCollectionId(int collectionId, int targetWebId);
-        List<BigInteger> GetMappedCollectionProductWebIdsByCollectionId(int collectionId, int targetWebId);
-        bool VariableExists(int collectionId, BigInteger variableWebId, int targetWebId);
+        List<long> GetVariableWebIds(int targetWebId);
+        List<long> GetVariableWebIdsByCollectionId(int collectionId, int targetWebId);
+        List<long> GetMappedCollectionProductWebIdsByCollectionId(int collectionId, int targetWebId);
+        bool VariableExists(int collectionId, long variableWebId, int targetWebId);
         int CreateVariable(VariableModel variable);
         void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, int productId, int targetWebId);
         List<int> GetSelectedProductAttributeValueId(int collectionId, int productId, int attributeId, int attributeValueId, int targetWebId);
@@ -395,7 +395,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="webId"></param>
         /// <param name="targetWeb"></param>
         /// <param name="category"></param>
-        void UpdateCategoryMap(int id, BigInteger webId, int targetWeb, Category category);
+        void UpdateCategoryMap(int id, long webId, int targetWeb, Category category);
 
         /// <summary>
         /// Creates a new category in the category table and generates a mapping to its web representation.
@@ -536,7 +536,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The web id to filter categories.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, BigInteger webId);
+        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, long webId);
 
         void SetProductCategoriesUpdateStatus(int targetWeb, bool updateRequired);
 
@@ -584,7 +584,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         
-        Customer GetCustomerByWebId(BigInteger webId, int targetWeb);
+        Customer GetCustomerByWebId(long webId, int targetWeb);
         
         /// <summary>
         /// Retrieves the number of customers that match a search term on a specified web platform.
@@ -788,7 +788,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </param>
         void DeleteInvoiceMap(Invoice invoice);
 
-        List<BigInteger> GetOrderWebIds(int targetWeb);
+        List<long> GetOrderWebIds(int targetWeb);
         
         #endregion
 

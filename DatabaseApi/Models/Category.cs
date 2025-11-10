@@ -9,7 +9,7 @@ namespace DatabaseApi.Models
     {
         public string Description { get; set; }
         public int? ParentId { get; set; }
-        public BigInteger? ParentWebId { get; set; }
+        public long? ParentWebId { get; set; }
         public ObservableCollection<Category> SubCategories { get; set; }
     }
 }

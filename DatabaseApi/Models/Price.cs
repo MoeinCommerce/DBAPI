@@ -9,7 +9,7 @@ namespace DatabaseApi.Models
 {
     public class Price
     {
-        public BigInteger Id { get; set; }
+        public long Id { get; set; }
         public decimal RegularPrice { get; set; }
         public decimal? SalePrice { get; set; }
         public int PriceLevelId { get; set; }

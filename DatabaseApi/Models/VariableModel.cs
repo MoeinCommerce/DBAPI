@@ -6,9 +6,9 @@ namespace DatabaseApi.Models
     {
         public int Id { get; set; }
         public int CollectionId { get; set; }
-        public BigInteger VariableWebId { get; set; }
+        public long VariableWebId { get; set; }
         public int VariationId { get; set; }
-        public BigInteger VariationWebId { get; set; }
+        public long VariationWebId { get; set; }
         public int TargetWeb { get; set; }
     }
 }
