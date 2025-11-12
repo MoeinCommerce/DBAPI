@@ -20,5 +20,6 @@ namespace DatabaseApi.Models
         public bool IsVariable { get; set; }
         public bool IsVariation { get; set; }
         public List<Price> Prices { get; set; }
+        public List<AttributeModel> Attributes { get; set; }
     }
 }
