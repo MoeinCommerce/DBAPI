@@ -356,7 +356,7 @@ namespace DatabaseApi.Contexts.Interfaces
         List<CollectionModel> GetUnMappedCollections(int targetWebId);
         List<CollectionModel> GetMappedCollections(int targetWebId);
         List<CollectionModel> GetMappedCollectionsByIds(IEnumerable<int> ids, int targetWebId);
-        List<CollectionModel> GetCollectionsBySearch(string searchTerm, int targetWebId);
+        List<CollectionModel> GetCollectionsBySearch(string searchTerm, int targetWebId, int pageNumber, int pageSize);
         List<PersonCategory> GetPersonCategoriesBySearch(string searchTerm, int targetWebId);
         #endregion
 
