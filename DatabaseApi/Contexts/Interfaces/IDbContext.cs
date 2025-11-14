@@ -280,7 +280,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool IsAttributeUsedInCollectionProduct(int attributeId, int targetWeb);
         void DeleteAttributeValueByAttributeId(int attributeId);
         void DeleteAttributeById(int attributeId);
-        List<CollectionModel> GetCollections(int targetWebId);
+        List<CollectionModel> GetCollections(int targetWebId, string searchTerm = "");
         List<CollectionAttributeModel> GetCollectionAttributesByCollectionId(int collectionId, int targetWebId);
         List<int> GetAttributeValueIdsByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
