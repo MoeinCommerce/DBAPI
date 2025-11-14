@@ -303,6 +303,8 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteCollectionById(int collectionId, int targetWebId);
         List<AttributeModel> GetAttributesById(int attributeId);
         List<AttributeModel> GetAttributesByCollectionId(int collectionId, int targetWebId);
+        List<CollectionAttributeValueModel> IsUsedAttributeInAnotherWeb(int targetWeb, AttributeModel attribute);
+        List<CollectionAttributeValueModel> IsUsedAttributeValueInAnotherWeb(int targetWeb, AttributeValueModel attributeValue);
         List<CollectionAttributeValueModel> GetCollectionAttributeValuesByCollectionAttributeId(int collectionAttributeId, int targetWebId);
         bool CollectionAttributeValueExists(int collectionAttributeId, int valueId, int targetWebId);
         void UpdateCollection(int collectionId, CollectionModel collection, int targetWebId);
