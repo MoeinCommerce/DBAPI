@@ -3,6 +3,6 @@
     public class CollectionAttributeValueModel
     {
         public int CollectionAttributeId { get; set; }
-        public int ValueId { get; set; }
+        public string ValueId { get; set; }
     }
 }
