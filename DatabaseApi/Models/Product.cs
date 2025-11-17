@@ -7,7 +7,7 @@ namespace DatabaseApi.Models
 {
     public class Product : MappableModel
     {
-        public long? Code { get; set; }
+        public string Code { get; set; }
         public string Unit { get; set; }   
         public string Description { get; set; }
         public decimal? BuyPrice { get; set; }
@@ -15,7 +15,7 @@ namespace DatabaseApi.Models
         public decimal? SellPrice { get; set; }
         public int WarehouseId { get; set; }
         public double StockQuantity { get; set; }
-        public int? CategoryId { get; set; }
+        public string CategoryId { get; set; }
         public DateTime CreatedDate { get; set; }
         public bool IsVariable { get; set; }
         public bool IsVariation { get; set; }

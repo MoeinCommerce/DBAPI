@@ -20,7 +20,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="targetWeb"></param>
         /// <param name="warehouse"></param>
         /// <returns></returns>
-        Product GetProductByWebId(long webId, int targetWeb, Warehouse warehouse = null);
+        Product GetProductByWebId(string webId, int targetWeb, Warehouse warehouse = null);
         
         /// <summary>
         /// Creates a mapping between a product and a corresponding web representation.
@@ -44,7 +44,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="targetWeb"></param>
         /// <param name="product"></param>
         /// <returns></returns>
-        Product UpdateProductMap(int id, long webId, int targetWeb, Product product);
+        Product UpdateProductMap(string id, string webId, int targetWeb, Product product);
 
         /// <summary>
         /// Creates a new product in the product table and generates a mapping to its web representation.
@@ -90,7 +90,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Product> GetMappedProducts(int targetWeb, PriceLevel priceLevel, Warehouse warehouse = null);
 
-        IEnumerable<long> GetProductWebIds(int targetWeb);
+        IEnumerable<string> GetProductWebIds(int targetWeb);
 
         /// <summary>
         /// Retrieves products that are not mapped to other products.
@@ -108,8 +108,8 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="priceLevel"></param>
         /// <param name="warehouse"></param>
         /// <returns></returns>
-        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<int> ids, PriceLevel priceLevel,Warehouse warehouse = null);
-        Product GetProductById(int productid, int targetWeb, PriceLevel priceLevel,Warehouse warehouse = null);
+        IEnumerable<Product> GetProductsByIds(int targetWeb, IEnumerable<string> ids, PriceLevel priceLevel,Warehouse warehouse = null);
+        Product GetProductById(string productid, int targetWeb, PriceLevel priceLevel,Warehouse warehouse = null);
 
         /// <summary>
         /// Retrieves paginated and filtered products to a specified web platform, using a search term.
@@ -281,62 +281,62 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteAttributeValueByAttributeId(int attributeId);
         void DeleteAttributeById(int attributeId);
         List<CollectionModel> GetCollections(int targetWebId, string searchTerm = "");
-        List<CollectionAttributeModel> GetCollectionAttributesByCollectionId(int collectionId, int targetWebId);
-        List<int> GetAttributeValueIdsByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
-        List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, int collectionId, int targetWebId);
-        List<Product> GetProductsByCollectionId(int collectionId, int targetWebId);
-        List<AttributeValueModel> GetAttributeValuesByProductId(int productId, int targetWebId);
-        void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(int collectionId, int targetWebId);
-        void DeleteProductForeignKeyFromCollectionProductTableByWebId(long webId, int targetWebId);
-        void DeleteProductMapById(int id);
-        void DeleteProductMapByWebId(long webId, int targetWebId);
-        void DeleteProductMapByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionAndProductId(int collectionId, int productId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(int collectionId, int productId, int attributeId, int targetWebId);
+        List<CollectionAttributeModel> GetCollectionAttributesByCollectionId(string collectionId, int targetWebId);
+        List<int> GetAttributeValueIdsByAttributeAndCollectionId(int attributeId, string collectionId, int targetWebId);
+        List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, string collectionId, int targetWebId);
+        List<Product> GetProductsByCollectionId(string collectionId, int targetWebId);
+        List<AttributeValueModel> GetAttributeValuesByProductId(string productId, int targetWebId);
+        void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(string collectionId, int targetWebId);
+        void DeleteProductForeignKeyFromCollectionProductTableByWebId(string webId, int targetWebId);
+        void DeleteProductMapById(string id);
+        void DeleteProductMapByWebId(string webId, int targetWebId);
+        void DeleteProductMapByCollectionId(string collectionId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionId(string collectionId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionAndProductId(string collectionId, string productId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(string collectionId, string productId, int attributeId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionProductIdAndAttributeId(int collectionProductId, int attributeId);
-        void DeleteCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionProductsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
-        void DeleteCollectionAttributeValueByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionAttributeByCollectionId(int collectionId, int targetWebId);
-        void DeleteVariableByCollectionId(int collectionId, int targetWebId);
-        void DeleteCollectionById(int collectionId, int targetWebId);
+        void DeleteCollectionProductsByCollectionId(string collectionId, int targetWebId);
+        void DeleteCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
+        void DeleteCollectionAttributeValueByCollectionId(string collectionId, int targetWebId);
+        void DeleteCollectionAttributeByCollectionId(string collectionId, int targetWebId);
+        void DeleteVariableByCollectionId(string collectionId, int targetWebId);
+        void DeleteCollectionById(string collectionId, int targetWebId);
         List<AttributeModel> GetAttributesById(int attributeId);
-        List<AttributeModel> GetAttributesByCollectionId(int collectionId, int targetWebId);
+        List<AttributeModel> GetAttributesByCollectionId(string collectionId, int targetWebId);
         bool IsUsedAttributeInAnotherWeb(int targetWeb, AttributeModel attribute);
         bool IsUsedAttributeValueInAnotherWeb(int targetWeb, AttributeValueModel attributeValue);
         List<CollectionAttributeValueModel> GetCollectionAttributeValuesByCollectionAttributeId(int collectionAttributeId, int targetWebId);
         bool CollectionAttributeValueExists(int collectionAttributeId, int valueId, int targetWebId);
-        void UpdateCollection(int collectionId, CollectionModel collection, int targetWebId);
-        void DeleteCollectionAttributeValuesByCollectionAndAttributeId(int collectionId, int attributeId, int targetWebId);
+        void UpdateCollection(string collectionId, CollectionModel collection, int targetWebId);
+        void DeleteCollectionAttributeValuesByCollectionAndAttributeId(string collectionId, int attributeId, int targetWebId);
         void DeleteCollectionAttributeValuesByValueId(int collectionAttributeId, int valueId, int targetWebId);
-        void DeleteCollectionAttributesByCollectionAndAttributeId(int collectionId, int attributeId, int targetWebId);
-        List<CollectionAttributeModel> GetCollectionAttributesByCollectionAndAttributeId(int collectionId, int attributeId, int targetWebId);
-        bool CollectionAttributeExists(int collectionId, int attributeId, int targetWebId);
+        void DeleteCollectionAttributesByCollectionAndAttributeId(string collectionId, int attributeId, int targetWebId);
+        List<CollectionAttributeModel> GetCollectionAttributesByCollectionAndAttributeId(string collectionId, int attributeId, int targetWebId);
+        bool CollectionAttributeExists(string collectionId, int attributeId, int targetWebId);
         int CreateCollectionAttribute(CollectionAttributeModel collectionAttribute);
         void CreateCollectionAttributeValue(CollectionAttributeValueModel collectionAttributeValue);
         int CreateCollection(CollectionModel collection);
-        bool CollectionProductAttributeValueExists(int collectionId, int attributeValueId, int targetWebId);
-        bool CollectionProductExists(int collectionId, int attributeId, int targetWebId);
-        bool CollectionNameExists(string name, int collectionId, int targetWeb);
+        bool CollectionProductAttributeValueExists(string collectionId, int attributeValueId, int targetWebId);
+        bool CollectionProductExists(string collectionId, int attributeId, int targetWebId);
+        bool CollectionNameExists(string name, string collectionId, int targetWeb);
         List<Product> GetProductsNotInCollectionBySearch(string SearchProductTerm);
-        List<Product> GetCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        List<int> GetCollectionProductIdsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
-        List<int> GetProductIdsByCollectionId(int collectionId, int targetWebId);
-        int GetCountOfCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        int GetCountOfUnMappedCollectionProductsByCollectionId(int collectionId, int targetWebId);
-        List<long> GetVariableWebIds(int targetWebId);
-        List<long> GetVariableWebIdsByCollectionId(int collectionId, int targetWebId);
-        List<long> GetMappedCollectionProductWebIdsByCollectionId(int collectionId, int targetWebId);
-        bool VariableExists(int collectionId, long variableWebId, int targetWebId);
+        List<Product> GetCollectionProductsByCollectionId(string collectionId, int targetWebId);
+        List<int> GetCollectionProductIdsByCollectionAndProductId(string collectionId, int productId, int targetWebId);
+        List<string> GetProductIdsByCollectionId(string collectionId, int targetWebId);
+        int GetCountOfCollectionProductsByCollectionId(string collectionId, int targetWebId);
+        int GetCountOfUnMappedCollectionProductsByCollectionId(string collectionId, int targetWebId);
+        List<string> GetVariableWebIds(int targetWebId);
+        List<string> GetVariableWebIdsByCollectionId(string collectionId, int targetWebId);
+        List<string> GetMappedCollectionProductWebIdsByCollectionId(string collectionId, int targetWebId);
+        bool VariableExists(string collectionId, string variableWebId, int targetWebId);
         int CreateVariable(VariableModel variable);
-        void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, int productId, int targetWebId);
-        List<int> GetSelectedProductAttributeValueId(int collectionId, int productId, int attributeId, int attributeValueId, int targetWebId);
-        List<int> GetCollectionProductsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
+        void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, string productId, int targetWebId);
+        List<int> GetSelectedProductAttributeValueId(string collectionId, string productId, int attributeId, int attributeValueId, int targetWebId);
+        List<int> GetCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         int CreateCollectionProduct(CollectionProductModel collectionProduct);
         void UpdateCollectionProductById(int collectionProductId, CollectionProductModel collectionProduct);
         void CreateCollectionProductAttributeValue(CollectionProductAttributeValueModel collectionProductAttributeValue);
-        List<AttributeValueMap> GetAttributeValueMapsByCollectionAndProductId(int collectionId, int productId, int targetWebId);
+        List<AttributeValueMap> GetAttributeValueMapsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         List<VariableModel> GetMappedVariables(int targetWebId);
         List<int> GetTargetWebIdsInProductMap();
         void DeleteProductMapByTargetWebId(int targetWebId);
@@ -353,11 +353,11 @@ namespace DatabaseApi.Contexts.Interfaces
         List<AttributeModel> GetAttributesBySearch(string searchTerm);
         bool CollectionExists(string name, List<string> ignoreNames = null);
         List<int> GetCollectionProductIds(int targetWebId);
-        List<CollectionModel> GetCollectionsByIds(IEnumerable<int> ids, int targetWebId);
-        List<CollectionModel> GetUnMappedCollectionsByIds(IEnumerable<int> ids, int targetWebId);
+        List<CollectionModel> GetCollectionsByIds(IEnumerable<string> ids, int targetWebId);
+        List<CollectionModel> GetUnMappedCollectionsByIds(IEnumerable<string> ids, int targetWebId);
         List<CollectionModel> GetUnMappedCollections(int targetWebId);
         List<CollectionModel> GetMappedCollections(int targetWebId);
-        List<CollectionModel> GetMappedCollectionsByIds(IEnumerable<int> ids, int targetWebId);
+        List<CollectionModel> GetMappedCollectionsByIds(IEnumerable<string> ids, int targetWebId);
         List<CollectionModel> GetCollectionsBySearch(string searchTerm, int targetWebId, int pageNumber, int pageSize);
         List<PersonCategory> GetPersonCategoriesBySearch(string searchTerm, int targetWebId);
         #endregion
@@ -374,7 +374,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The ID of the category to retrieve.
         /// </param>
         /// <returns></returns>
-        Category GetCategoryById(int id);
+        Category GetCategoryById(string id);
         
         /// <summary>
         /// Creates a mapping between a category and a corresponding web representation.
@@ -397,7 +397,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="webId"></param>
         /// <param name="targetWeb"></param>
         /// <param name="category"></param>
-        void UpdateCategoryMap(int id, long webId, int targetWeb, Category category);
+        void UpdateCategoryMap(string id, string webId, int targetWeb, Category category);
 
         /// <summary>
         /// Creates a new category in the category table and generates a mapping to its web representation.
@@ -538,7 +538,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The web id to filter categories.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, long webId);
+        IEnumerable<Category> GetCategoriesByWebId(int targetWeb, string webId);
 
         void SetProductCategoriesUpdateStatus(int targetWeb, bool updateRequired);
 
@@ -586,7 +586,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </returns>
         IEnumerable<Customer> GetCustomersBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb);
         
-        Customer GetCustomerByWebId(long webId, int targetWeb);
+        Customer GetCustomerByWebId(string webId, int targetWeb);
         
         /// <summary>
         /// Retrieves the number of customers that match a search term on a specified web platform.
@@ -694,7 +694,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The list of ids to filter products.
         /// </param>
         /// <returns></returns>
-        IEnumerable<Customer> GetCustomersByIds(int targetWeb, IEnumerable<int> ids);
+        IEnumerable<Customer> GetCustomersByIds(int targetWeb, IEnumerable<string> ids);
         
         /// <summary>
         /// Retrieves customers that are not mapped to other customers of webSite.
@@ -790,7 +790,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </param>
         void DeleteInvoiceMap(Invoice invoice);
 
-        List<long> GetOrderWebIds(int targetWeb);
+        List<string> GetOrderWebIds(int targetWeb);
         
         #endregion
 
