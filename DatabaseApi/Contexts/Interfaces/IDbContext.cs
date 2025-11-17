@@ -321,7 +321,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool CollectionNameExists(string name, string collectionId, int targetWeb);
         List<Product> GetProductsNotInCollectionBySearch(string SearchProductTerm);
         List<Product> GetCollectionProductsByCollectionId(string collectionId, int targetWebId);
-        List<int> GetCollectionProductIdsByCollectionAndProductId(string collectionId, int productId, int targetWebId);
+        List<int> GetCollectionProductIdsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         List<string> GetProductIdsByCollectionId(string collectionId, int targetWebId);
         int GetCountOfCollectionProductsByCollectionId(string collectionId, int targetWebId);
         int GetCountOfUnMappedCollectionProductsByCollectionId(string collectionId, int targetWebId);
