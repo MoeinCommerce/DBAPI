@@ -282,7 +282,7 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteAttributeById(string attributeId);
         List<CollectionModel> GetCollections(int targetWebId, string searchTerm = "");
         List<CollectionAttributeModel> GetCollectionAttributesByCollectionId(string collectionId, int targetWebId);
-        List<int> GetAttributeValueIdsByAttributeAndCollectionId(int attributeId, string collectionId, int targetWebId);
+        List<string> GetAttributeValueIdsByAttributeAndCollectionId(string attributeId, string collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, string collectionId, int targetWebId);
         List<Product> GetProductsByCollectionId(string collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByProductId(string productId, int targetWebId);
@@ -293,15 +293,15 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteProductMapByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionAndProductId(string collectionId, string productId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(string collectionId, string productId, int attributeId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionProductIdAndAttributeId(int collectionProductId, int attributeId);
+        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(string collectionId, string productId, string attributeId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionProductIdAndAttributeId(int collectionProductId, string attributeId);
         void DeleteCollectionProductsByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         void DeleteCollectionAttributeValueByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionAttributeByCollectionId(string collectionId, int targetWebId);
         void DeleteVariableByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionById(string collectionId, int targetWebId);
-        List<AttributeModel> GetAttributesById(int attributeId);
+        List<AttributeModel> GetAttributesById(string attributeId);
         List<AttributeModel> GetAttributesByCollectionId(string collectionId, int targetWebId);
         bool IsUsedAttributeInAnotherWeb(int targetWeb, AttributeModel attribute);
         bool IsUsedAttributeValueInAnotherWeb(int targetWeb, AttributeValueModel attributeValue);
@@ -331,7 +331,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool VariableExists(string collectionId, string variableWebId, int targetWebId);
         string CreateVariable(VariableModel variable);
         void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, string productId, int targetWebId);
-        List<string> GetSelectedProductAttributeValueId(string collectionId, string productId, int attributeId, int attributeValueId, int targetWebId);
+        List<string> GetSelectedProductAttributeValueId(string collectionId, string productId, string attributeId, string attributeValueId, int targetWebId);
         List<string> GetCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         string CreateCollectionProduct(CollectionProductModel collectionProduct);
         void UpdateCollectionProductById(int collectionProductId, CollectionProductModel collectionProduct);
