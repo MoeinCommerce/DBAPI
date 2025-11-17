@@ -526,7 +526,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
-        IEnumerable<Category> GetCategoriesByIds(int targetWeb, IEnumerable<int> ids);
+        IEnumerable<Category> GetCategoriesByIds(int targetWeb, IEnumerable<string> ids);
         
         /// <summary>
         /// Retrieves all categories from the database. filtered by  web id.
