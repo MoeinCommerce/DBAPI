@@ -7,7 +7,7 @@ namespace DatabaseApi.Models
 {
     public class Product : MappableModel
     {
-        public long? Code { get; set; }
+        public string Code { get; set; }
         public string Unit { get; set; }   
         public string Description { get; set; }
         public decimal? BuyPrice { get; set; }

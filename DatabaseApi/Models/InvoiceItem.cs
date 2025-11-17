@@ -9,8 +9,8 @@ namespace DatabaseApi.Models
         private double? _total;
 
         // Foreign Keys
-        public int InvoiceId { get; set; }
-        public int ProductId { get; set; }
+        public string InvoiceId { get; set; }
+        public string ProductId { get; set; }
         public string ProductName { get; set; }
         public int WarehouseId { get; set; }
         public int PriceId { get; set; }
