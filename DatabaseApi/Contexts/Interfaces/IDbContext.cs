@@ -283,7 +283,7 @@ namespace DatabaseApi.Contexts.Interfaces
         List<CollectionModel> GetCollections(int targetWebId, string searchTerm = "");
         List<CollectionAttributeModel> GetCollectionAttributesByCollectionId(string collectionId, int targetWebId);
         List<string> GetAttributeValueIdsByAttributeAndCollectionId(string attributeId, string collectionId, int targetWebId);
-        List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(int attributeId, string collectionId, int targetWebId);
+        List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(string attributeId, string collectionId, int targetWebId);
         List<Product> GetProductsByCollectionId(string collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByProductId(string productId, int targetWebId);
         void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(string collectionId, int targetWebId);
