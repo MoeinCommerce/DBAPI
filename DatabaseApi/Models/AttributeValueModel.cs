@@ -4,12 +4,12 @@ namespace DatabaseApi.Models
 {
     public class AttributeValueModel : INotifyPropertyChanged
     {
-        private int _id;
-        private int _attributeId;
+        private string _id;
+        private string _attributeId;
         private string _value;
         private bool _isSelected = true;
 
-        public int Id
+        public string Id
         {
             get => _id;
             set
@@ -22,7 +22,7 @@ namespace DatabaseApi.Models
             }
         }
 
-        public int AttributeId
+        public string AttributeId
         {
             get => _attributeId;
             set

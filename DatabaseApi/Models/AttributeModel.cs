@@ -7,12 +7,12 @@ namespace DatabaseApi.Models
 {
     public class AttributeModel : INotifyPropertyChanged
     {
-        private int _id;
+        private string _id;
         private string _name;
         private AttributeValueModel _selectedValue;
         private List<AttributeValueModel> _attributeValues;
 
-        public int Id
+        public string Id
         {
             get => _id;
             set
