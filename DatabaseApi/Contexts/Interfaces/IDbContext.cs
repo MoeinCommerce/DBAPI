@@ -321,7 +321,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool CollectionNameExists(string name, string collectionId, int targetWeb);
         List<Product> GetProductsNotInCollectionBySearch(string SearchProductTerm);
         List<Product> GetCollectionProductsByCollectionId(string collectionId, int targetWebId);
-        List<int> GetCollectionProductIdsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
+        List<string> GetCollectionProductIdsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         List<string> GetProductIdsByCollectionId(string collectionId, int targetWebId);
         int GetCountOfCollectionProductsByCollectionId(string collectionId, int targetWebId);
         int GetCountOfUnMappedCollectionProductsByCollectionId(string collectionId, int targetWebId);
@@ -352,7 +352,7 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteRowsFromCollectionTablesByTargetWebId(int targetWebId);
         List<AttributeModel> GetAttributesBySearch(string searchTerm);
         bool CollectionExists(string name, List<string> ignoreNames = null);
-        List<int> GetCollectionProductIds(int targetWebId);
+        List<string> GetCollectionProductIds(int targetWebId);
         List<CollectionModel> GetCollectionsByIds(IEnumerable<string> ids, int targetWebId);
         List<CollectionModel> GetUnMappedCollectionsByIds(IEnumerable<string> ids, int targetWebId);
         List<CollectionModel> GetUnMappedCollections(int targetWebId);
