@@ -329,11 +329,11 @@ namespace DatabaseApi.Contexts.Interfaces
         List<string> GetVariableWebIdsByCollectionId(string collectionId, int targetWebId);
         List<string> GetMappedCollectionProductWebIdsByCollectionId(string collectionId, int targetWebId);
         bool VariableExists(string collectionId, string variableWebId, int targetWebId);
-        int CreateVariable(VariableModel variable);
+        string CreateVariable(VariableModel variable);
         void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, string productId, int targetWebId);
-        List<int> GetSelectedProductAttributeValueId(string collectionId, string productId, int attributeId, int attributeValueId, int targetWebId);
-        List<int> GetCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
-        int CreateCollectionProduct(CollectionProductModel collectionProduct);
+        List<string> GetSelectedProductAttributeValueId(string collectionId, string productId, int attributeId, int attributeValueId, int targetWebId);
+        List<string> GetCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
+        string CreateCollectionProduct(CollectionProductModel collectionProduct);
         void UpdateCollectionProductById(int collectionProductId, CollectionProductModel collectionProduct);
         void CreateCollectionProductAttributeValue(CollectionProductAttributeValueModel collectionProductAttributeValue);
         List<AttributeValueMap> GetAttributeValueMapsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
