@@ -13,7 +13,7 @@ namespace DatabaseApi.Models
         public string ProductId { get; set; }
         public string ProductName { get; set; }
         public int WarehouseId { get; set; }
-        public int PriceId { get; set; }
+        public string PriceId { get; set; }
 
         // Base Properties
         public double UnitPrice { get; set; }
