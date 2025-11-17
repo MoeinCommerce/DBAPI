@@ -315,7 +315,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool CollectionAttributeExists(string collectionId, int attributeId, int targetWebId);
         int CreateCollectionAttribute(CollectionAttributeModel collectionAttribute);
         void CreateCollectionAttributeValue(CollectionAttributeValueModel collectionAttributeValue);
-        int CreateCollection(CollectionModel collection);
+        string CreateCollection(CollectionModel collection);
         bool CollectionProductAttributeValueExists(string collectionId, int attributeValueId, int targetWebId);
         bool CollectionProductExists(string collectionId, int attributeId, int targetWebId);
         bool CollectionNameExists(string name, string collectionId, int targetWeb);
