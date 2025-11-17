@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string CollectionId { get; set; }
-        public int AttributeId { get; set; }
+        public string AttributeId { get; set; }
     }
 }

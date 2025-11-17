@@ -2,7 +2,7 @@
 {
     public class AttributeValueMap
     {
-        public int AttributeId { get; set; }
-        public int ValueId { get; set; }
+        public string AttributeId { get; set; }
+        public string ValueId { get; set; }
     }
 }
