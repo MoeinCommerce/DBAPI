@@ -256,7 +256,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="prodcutId">Id of product</param>
         /// <param name="warehouseIds">List of warehouse id</param>
         /// <returns>List of tuples include warehouse id and stock of that warehouse.</returns>
-        List<(int WarehouseId, double Stock)> GetProductStocksByWarehouseIds(string productId, List<int> warehouseIds);
+        List<(int WarehouseId, double Stock)> GetProductStocksByWarehouseIds(Product product, List<int> warehouseIds);
 
         void SetProductsUpdateStatus(int targetWeb, bool updateRequired);
 
