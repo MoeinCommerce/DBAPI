@@ -285,7 +285,7 @@ namespace DatabaseApi.Contexts.Interfaces
         List<string> GetAttributeValueIdsByAttributeAndCollectionId(string attributeId, string collectionId, int targetWebId);
         List<AttributeValueModel> GetAttributeValuesByAttributeAndCollectionId(string attributeId, string collectionId, int targetWebId);
         List<CollectionProductModel> GetProductsByCollectionId(string collectionId, int targetWebId);
-        List<AttributeValueModel> GetAttributeValuesByProductId(string productId, int targetWebId);
+        List<AttributeValueModel> GetAttributeValuesByCollectionProductAndProductId(string collectionProduct, string productId, int targetWebId);
         void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(string collectionId, int targetWebId);
         void DeleteProductForeignKeyFromCollectionProductTableByWebId(string webId, int targetWebId);
         void DeleteProductMapById(string id);
@@ -294,7 +294,7 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteProductMapByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionAndProductId(string collectionId, string productId, int targetWebId);
-        void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(string collectionId, string productId, string attributeId, int targetWebId);
+        void DeleteCollectionProductAttributeValuesByCollectionProductAndAttributeId(string collectionId, string attributeId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionProductIdAndAttributeId(int collectionProductId, string attributeId);
         void DeleteCollectionProductAttributeValuesByCollectionProductId(string collectionProductId, int targetWeb, string productId, string collectionId);
         void DeleteCollectionProductsByCollectionId(string collectionId, int targetWebId);
@@ -333,13 +333,13 @@ namespace DatabaseApi.Contexts.Interfaces
         List<string> GetMappedCollectionProductWebIdsByCollectionId(string collectionId, int targetWebId);
         bool VariableExists(string collectionId, string variableWebId, int targetWebId);
         string CreateVariable(VariableModel variable);
-        void UpdateCollectionProductByProductId(CollectionProductModel collectionProduct, string productId, int targetWebId);
+        void UpdateCollectionProductBycollectionProductAndProductId(CollectionProductModel collectionProduct, string collectionProductId, string productId, int targetWebId);
         List<string> GetSelectedProductAttributeValueId(CollectionProductModel collectionProduct, string attributeId, string attributeValueId, int targetWebId);
         List<string> GetCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         string CreateCollectionProduct(CollectionProductModel collectionProduct);
         void UpdateCollectionProductById(int collectionProductId, CollectionProductModel collectionProduct);
         void CreateCollectionProductAttributeValue(CollectionProductAttributeValueModel collectionProductAttributeValue);
-        List<AttributeValueMap> GetAttributeValueMapsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
+        List<AttributeValueMap> GetAttributeValueMapsByCollectionProductId(string collectionProductId, int targetWebId);
         List<VariableModel> GetMappedVariables(int targetWebId);
         List<int> GetTargetWebIdsInProductMap();
         void DeleteProductMapByTargetWebId(int targetWebId);
