@@ -826,7 +826,7 @@ namespace DatabaseApi.Contexts.Interfaces
 
         #region Other Methods
 
-        IEnumerable<TModel> ExecuteRawSqlTemporary<TModel>(string query);
+        IEnumerable<TModel> ExecuteRawSqlTemporary<TModel>(string query, params object[] parameters);
         void DatabasePrerequisites();
 
         #endregion
