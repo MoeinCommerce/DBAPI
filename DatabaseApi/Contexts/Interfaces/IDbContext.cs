@@ -289,13 +289,16 @@ namespace DatabaseApi.Contexts.Interfaces
         void DeleteProductForeignKeyFromCollectionProductTableByCollectionId(string collectionId, int targetWebId);
         void DeleteProductForeignKeyFromCollectionProductTableByWebId(string webId, int targetWebId);
         void DeleteProductMapById(string id);
+        void DeleteProductMapByCollectionProductId(string collectionProductId, string productId, int targetWeb);
         void DeleteProductMapByWebId(string webId, int targetWebId);
         void DeleteProductMapByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionAndAttributeId(string collectionId, string productId, string attributeId, int targetWebId);
         void DeleteCollectionProductAttributeValuesByCollectionProductIdAndAttributeId(int collectionProductId, string attributeId);
+        void DeleteCollectionProductAttributeValuesByCollectionProductId(string collectionProductId, int targetWeb, string productId, string collectionId);
         void DeleteCollectionProductsByCollectionId(string collectionId, int targetWebId);
+        void DeleteCollectionProductsByCollectionProductId(string collectionProductId,  string collectionId, string productId, int targetWebId);
         void DeleteCollectionProductsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         void DeleteCollectionAttributeValueByCollectionId(string collectionId, int targetWebId);
         void DeleteCollectionAttributeByCollectionId(string collectionId, int targetWebId);
