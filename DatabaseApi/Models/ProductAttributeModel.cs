@@ -7,6 +7,8 @@ namespace DatabaseApi.Models
 {
     public class ProductAttributeModel
     {
+        public string Id { get; set; }
+        public int InternalId { get; set; }
         public bool IsMapped { get; set; }
         public CollectionModel Collection { get; set; }
         public Product Product { get; set; }
