@@ -322,7 +322,7 @@ namespace DatabaseApi.Contexts.Interfaces
         bool CollectionProductAttributeValueExists(string collectionId, string attributeValueId, int targetWebId);
         bool CollectionProductExists(string collectionId, string attributeId, int targetWebId);
         bool CollectionNameExists(string name, string collectionId, int targetWeb);
-        List<Product> GetProductsNotInCollectionBySearch(string SearchProductTerm);
+        List<Product> GetProductsNotInCollectionBySearch(string SearchProductTerm, int targetWeb);
         List<Product> GetCollectionProductsByCollectionId(string collectionId, int targetWebId);
         List<string> GetCollectionProductIdsByCollectionAndProductId(string collectionId, string productId, int targetWebId);
         List<string> GetProductIdsByCollectionId(string collectionId, int targetWebId);
