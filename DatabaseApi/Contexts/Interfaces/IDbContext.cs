@@ -426,7 +426,22 @@ namespace DatabaseApi.Contexts.Interfaces
         /// Thrown if the category is invalid.
         /// </exception>
         void DeleteCategoryMap(Category category);
-        
+
+        /// <summary>
+        /// Retrieves category mapped to other category on a specified web platform.
+        /// This mapping shows category-to-category associations on the target website.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the category to retrieve.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering category-to-category mappings.
+        /// </param>
+        /// <returns>
+        /// category mapped to other category on the specified web platform.
+        /// </returns> 
+        Category GetMappedCategoryById(string id, int targetWeb);
+
         /// <summary>
         /// Retrieves all categories mapped to other categories on a specified web platform.
         /// This mapping shows category-to-category associations on the target website.
@@ -438,7 +453,7 @@ namespace DatabaseApi.Contexts.Interfaces
         /// A list of categories mapped to other categories on the specified web platform.
         /// </returns> 
         IEnumerable<Category> GetMappedCategories(int targetWeb);
-        
+
         /// <summary>
         /// Retrieve categories that are not mapped to other categories.
         /// </summary>
