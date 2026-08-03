@@ -11,6 +11,7 @@ namespace DatabaseApi.Models
         public string WebId { get; set; }
         public string WebName { get; set; }
         public int? TargetWeb { get; set; }
+        public string Extra { get; set; }
         public DateTime? LastUpdate { get; set; }
         public bool? UpdateRequired { get; set; }
     }
