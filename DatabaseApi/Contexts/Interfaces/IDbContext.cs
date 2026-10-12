@@ -1,10 +1,10 @@
 ﻿// DatabaseApi
-using DatabaseApi.Exceptions;
 using DatabaseApi.Models;
+using DatabaseApi.Models.Filter;
+
 // System
 using System;
 using System.Collections.Generic;
-using System.Numerics;
 
 
 namespace DatabaseApi.Contexts.Interfaces
@@ -118,6 +118,9 @@ namespace DatabaseApi.Contexts.Interfaces
         /// The search term for filtering products.
         /// If searchInput is null or empty, all products are returned.
         /// </param>
+        /// <param name="filter">
+        /// The filters for filtering products.
+        /// </param>
         /// <param name="pageNumber">
         /// The page number to retrieve.
         /// </param>
@@ -138,19 +141,22 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of products to the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
-        
+        IEnumerable<Product> GetProductsBySearch(string searchInput, ProductFilter filter, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+
         /// <summary>
         /// Retrieves the number of products that match a search term on a specified web platform.
         /// </summary>
         /// <param name="searchInput">
         /// The search term for filtering products.
         /// </param>
+        /// <param name="filter">
+        /// The filters for filtering products.
+        /// </param>
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering products.
         /// </param>
         /// <returns></returns>
-        int GetTotalProductsCount(string searchInput, int targetWeb);
+        int GetTotalProductsCount(string searchInput, ProductFilter filter, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered products mapped to other products on a specified web platform, using a search term.
@@ -158,6 +164,9 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="searchInput">
         /// The search term for filtering product-to-product mappings.
         /// If searchInput is null or empty, all products are returned.
+        /// </param>
+        /// <param name="filter">
+        /// The filters for filtering product-to-product mappings.
         /// </param>
         /// <param name="pageNumber">
         /// The page number to retrieve.
@@ -179,19 +188,22 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of products mapped to other products on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
-        
+        IEnumerable<Product> GetMappedProductsBySearch(string searchInput, ProductFilter filter, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+
         /// <summary>
         /// Retrieves the number of products mapped to other products on a specified web platform that match a search term.
         /// </summary>
         /// <param name="searchInput">
         /// The search term for filtering product-to-product mappings.
         /// </param>
+        /// <param name="filter">
+        /// The filters for filtering product-to-product mappings.
+        /// </param>
         /// <param name="targetWeb">
         /// The ID of the target web platform for filtering product-to-product mappings.
         /// </param>
         /// <returns></returns>
-        int GetTotalMappedProductsCount(string searchInput, int targetWeb);
+        int GetTotalMappedProductsCount(string searchInput, ProductFilter filter, int targetWeb);
 
         /// <summary>
         /// Retrieves paginated and filtered products that are not mapped to other products on a specified web platform, using a search term.
@@ -199,6 +211,9 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <param name="searchInput">
         /// The search term for filtering unmapped products.
         /// If searchInput is null or empty, all products are returned.
+        /// </param>
+        /// <param name="filter">
+        /// The filters for filtering unmapped products.
         /// </param>
         /// <param name="pageNumber">
         /// The page number to retrieve.
@@ -220,16 +235,22 @@ namespace DatabaseApi.Contexts.Interfaces
         /// <returns>
         /// A paginated list of products not mapped to other products on the specified web platform that match the search term.
         /// </returns>
-        IEnumerable<Product> GetUnMappedProductsBySearch(string searchInput, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
-        
+        IEnumerable<Product> GetUnMappedProductsBySearch(string searchInput, ProductFilter filter, int pageNumber, int pageSize, int targetWeb, PriceLevel priceLevel = null, Warehouse warehouse = null);
+
         /// <summary>
         /// retrieves the number of products that are not mapped to other products on a specified web platform that match a search term.
         /// </summary>
         /// <param name="searchInput">
         /// The search term for filtering unmapped products.
         /// </param>
+        /// <param name="filter">
+        /// The filters for filtering unmapped products.
+        /// </param>
+        /// <param name="targetWeb">
+        /// The ID of the target web platform for filtering unmapped products.
+        /// </param>
         /// <returns></returns>
-        int GetTotalUnMappedProductsCount(string searchInput, int targetWeb);
+        int GetTotalUnMappedProductsCount(string searchInput, ProductFilter filter, int targetWeb);
 
         /// <summary>
         /// Retrieves all products that require updates on a specified website.
